@@ -4,6 +4,7 @@ const query = `
 *[_type =="project"]{
     title,
     slug,
+    "bilde": cover.asset->url,
     _id,
   }
 `;
@@ -15,9 +16,27 @@ const url = `https://${projectID}.api.sanity.io/v2021-10-21/data/query/productio
 //dukker det opp en feil
 async function getData() {
     const response =await fetch(url)
-    const data = await response.json();
-    console.log(data);
+    const {result}  = await response.json();
+    console.log(result);
+
+    const projectList = document.getElementById('project-list');
+    console.log(projectList)
+    const ulList = document.createElement('ul');
+    console.log(ulList)
+
+    result.forEach(project => {
+        const liEl = document.createElement('li');
+        liEl.textContent = project.title;
+        const imgEl = document.createElement('img');
+        imgEl.setAttribute('src', project.bilde);
+        imgEl.setAttribute('width', '200');
+        liEl.append(imgEl);
+        ulList.append(liEl);
+    });
+
+  projectList.append(ulList);
 }
+
 
 getData();
 

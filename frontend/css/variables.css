@@ -1,0 +1,8 @@
+:root{
+    --background-header: #FBFBFB;
+    --background-color: #26232D;
+    --font-color: #fff;
+    --app-font: 'Syne', sans-serif;
+    --body-font:'Poppins', sans-serif;
+    --max-width: 47rem;
+}
