@@ -24,7 +24,7 @@ export default {
         }, 
         
         {
-            name: 'projectPitch',
+            name: 'shortProjectPitch',
             title: 'Short project pitch',
             type: 'blockContent'
         },
@@ -74,6 +74,11 @@ export default {
         {
             name: 'shortdescription',
             title: 'Brief',
+            type: 'blockContent'
+        },
+        {
+            name: 'projectDetails',
+            title: 'Project Details',
             type: 'blockContent'
         },
         {
