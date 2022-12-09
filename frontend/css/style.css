@@ -63,10 +63,18 @@ header {
 
 }
 
+button {
+	background-color: #26232D;
+	border: #26232D;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
 
 .hero {
 	width: 100vw;
-	height: 80vh;
 	display: flex;
 	flex-flow: column nowrap;
 	/* justify-content: center; */
@@ -668,8 +676,20 @@ p.text__white {
 	p.large {
 		font-size: 1.25rem;
 	}
-
 	
+	.hero {
+		width: 100vw;
+		height: 80vh;
+		display: flex;
+		flex-flow: column nowrap;
+		/* justify-content: center; */
+		/*justify content følger Y aksen*/
+		align-items: center;
+		/* align items følger X aksen*/
+		position: relative;
+		background-color: #FBFBFB;
+		color: #0B0B0B;
+	}
 
 
     nav {
