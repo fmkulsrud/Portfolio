@@ -66,6 +66,8 @@ header {
 button {
 	background-color: #26232D;
 	border: #26232D;
+	font-family: var(--body-font);
+	font-size: 1.25rem;
 }
 
 button:hover {
@@ -374,7 +376,6 @@ p.text__white {
 }
 
 .hire--button {
-
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
