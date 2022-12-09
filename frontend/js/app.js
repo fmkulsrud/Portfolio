@@ -124,13 +124,15 @@ function renderSingleProject (result) {
 }
 
 function handleImgGalleries(gallery, container) {
-  const galleryContainer = document.getElementById(container);
-  gallery.map(img => {
-    const imgContainer = document.createElement('img');
-    imgContainer.setAttribute('src', img);
-    imgContainer.classList.add('gallery-img');
-    galleryContainer.append(imgContainer);
-  });
+  if(gallery && gallery.length > 0) {
+    const galleryContainer = document.getElementById(container);
+    gallery.map(img => {
+      const imgContainer = document.createElement('img');
+      imgContainer.setAttribute('src', img);
+      imgContainer.classList.add('gallery-img');
+      galleryContainer.append(imgContainer);
+    });
+  };
 }
 
 function plotTools (data, container) {
