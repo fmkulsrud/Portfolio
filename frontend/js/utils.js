@@ -30,7 +30,7 @@ export function handleParagraphs(blockContent, container) {
                 }
                 if(p.style === 'h4') {
                     pEl = document.createElement('h4');
-                }
+                }                
                 if(p.listItem === 'bullet') {
                     pEl = document.createElement('li');
                 }

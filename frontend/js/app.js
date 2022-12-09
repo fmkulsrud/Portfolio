@@ -47,7 +47,8 @@ const querySingleProject = `
     "hifigallery": hifigallery[].asset->url,
     discoverFigma,
     figmalink,
-    reflection
+    reflection,
+    moodboard
 
   }
 `;
@@ -104,6 +105,8 @@ function renderSingleProject (result) {
 
   handleParagraphs(result[0].icons, 'iconsContent');
   handleImgGalleries(result[0].iconsImg, 'icons-images');
+
+  handleParagraphs(result[0].moodboard, 'moodboard');
 
   if(result[0].hifiprototypeimg) {
     const prototypeCover = document.getElementById('prototype-cover');

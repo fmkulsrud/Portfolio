@@ -199,8 +199,8 @@ footer p {
     padding: 0.3rem;
 }
 
-p.regular {
-	font-size: 1.125rem;
+p.bold {
+	font-weight: 700;
 	color: #0B0B0B;
 }
 
@@ -494,8 +494,8 @@ p.text__white {
 	color: var(--font-color);
 }
 
-#styleContent{
-    padding: 2rem 1.2rem;
+#styleContent p{
+    padding: 1rem 0;
 }
 
 .mockup-imgs {
@@ -509,6 +509,10 @@ p.text__white {
 	max-width: var(--max-width);
 	align-items: flex-start;
     padding: 2rem 1.2rem;
+}
+
+.wireframes p {
+	padding: 1rem 0;
 }
 
 .title-display {
@@ -561,9 +565,7 @@ p.text__white {
     padding: 2rem 1.2rem;
 }
 
-#hifi-Content {
-    padding: 2rem 1.2rem;
-}
+
 
 #hifi-images {
     padding: 2rem 1.2rem;

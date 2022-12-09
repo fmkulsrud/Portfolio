@@ -145,6 +145,11 @@ export default {
             type: 'image',
         },
         {
+            name: 'moodboard',
+            title: 'Moodboard Content',
+            type: 'blockContent',
+        },
+        {
             name: 'wireframeDescription',
             title: 'Short wireframe description',
             type: 'blockContent',
