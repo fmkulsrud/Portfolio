@@ -103,6 +103,11 @@ export default {
             of: [{type: 'image'}],
         },
         {
+            name: 'targetGroupsContainer',
+            title: 'Target groups',
+            type: 'blockContent',
+        },
+        {
             name: 'personas',
             title: 'Personas',
             type: 'blockContent',
@@ -151,9 +156,26 @@ export default {
             of: [{type:'image'}]
         },
         {
+            name: 'styleContent',
+            title: 'Style Content',
+            type: 'blockContent',
+        },
+        {
             name: 'styleguide',
             title: 'Style guide',
-            type: 'image',
+            type: 'array',
+            of: [{type:'image'}]
+        },
+        {
+            name: 'icons',
+            title: 'Icons Content',
+            type: 'blockContent'
+        },
+        {
+            name: 'iconsImg',
+            title: 'Icons images',
+            type: 'array',
+            of: [{type:'image'}]
         },
         {
             name: 'hifiprototypeimg',
@@ -180,6 +202,11 @@ export default {
             name: 'reflection',
             title: 'Your own reflection',
             type: 'blockContent',
+        },
+        {
+            name: 'discoverFigma',
+            title: 'Discover content',
+            type: 'blockContent'
         },
         {
             name: 'figmalink',

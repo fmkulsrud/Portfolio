@@ -1,6 +1,6 @@
 import handleHambuger from './menu.js';
 import { readUrl } from './utils.js';
-import { sanityUrl } from './env.js';
+import { aboutUrl, sanityUrl } from './env.js';
 import {handleParagraphs} from './utils.js';
 
 handleHambuger();
@@ -26,22 +26,53 @@ const querySingleProject = `
     shortProjectPitch,
     shortdescription,
     projectDetails,
-    tools
+    tools[]->,
+    userReasearch,
+    "researchimg": researchimg.asset->url,
+    comeptitor,
+    findings,
+    "findingsimg": findingsGallery[].asset->url,
+    "competitorimage": competitorimage[].asset->url,
+    targetGroupsContainer,
+    personas,
+    "personasGallery": personasGallery[].asset->url,
+    wireframeDescription,
+    "wireframegallery": wireframegallery[].asset->url,
+    styleContent,
+    "styleguide": styleguide[].asset->url,
+    icons,
+    "iconsImg": iconsImg[].asset->url,
+    hifiprototype,
+    "hifiprototypeimg": hifiprototypeimg.asset->url,
+    "hifigallery": hifigallery[].asset->url,
+    discoverFigma,
+    figmalink,
+    reflection
+
   }
 `;
+
+const queryAboutMe = `
+  *[_type == "about"]{
+    _id,
+    age,
+    bio[],
+    slug,
+
+  }
+`;
+
 
 // end of queries
 
 async function getProject() {
     const response = await fetch(`${sanityUrl}${encodeURI(querySingleProject)}`);
     const { result } = await response.json();
-    console.log(result);
     renderSingleProject(result);
 }
 
 function renderSingleProject (result) {
-  const titleEl = document.querySelector('.single-project__title')
-  console.log(titleEl)
+  const titleEl = document.querySelector('.single-project__title');
   titleEl.textContent = result[0].title
   const coverProjectEl = document.querySelector('.project__cover');
   coverProjectEl.setAttribute('src', result[0].cover);
@@ -49,11 +80,67 @@ function renderSingleProject (result) {
 
   handleParagraphs(result[0].shortdescription, 'briefContent');
   handleParagraphs(result[0].projectDetails, 'project_details');
-  handleParagraphs(result[0].tools, 'toolIcons');
-
+  plotTools(result[0].tools, 'toolIcons');
+  handleParagraphs(result[0].userReasearch, 'userResearchContent');
   
+  const researchImgEl = document.querySelector(".research-img");
+  researchImgEl.setAttribute('src', result[0].researchimg);
 
+  handleParagraphs(result[0].comeptitor, 'competitorAnalysisContent');
+  handleImgGalleries(result[0].competitorimage, 'competitorGallery');
 
+  handleParagraphs(result[0].findings, 'findingsContent');
+  handleImgGalleries(result[0].findingsimg, 'findingsGallery');
+  
+  handleParagraphs(result[0].targetGroupsContainer, 'targetContent');
+  handleParagraphs(result[0].personas, 'personaContent');
+  handleImgGalleries(result[0].personasGallery, 'persona-Img');
+
+  handleParagraphs(result[0].wireframeDescription, 'wireframesContent');
+  handleImgGalleries(result[0].wireframegallery, 'wireframes-images');
+  
+  handleParagraphs(result[0].styleContent, 'styleContent');
+  handleImgGalleries(result[0].styleguide, 'style-images');
+
+  handleParagraphs(result[0].icons, 'iconsContent');
+  handleImgGalleries(result[0].iconsImg, 'icons-images');
+
+  if(result[0].hifiprototypeimg) {
+    const prototypeCover = document.getElementById('prototype-cover');
+    //const prototypeCoverEL = document.createElement('img') // if you build in img tag
+    prototypeCover.setAttribute('src', result[0].hifiprototypeimg);
+    prototypeCover.setAttribute('alt', 'prototype bilde');
+    //prototypeCover.append(prototypeCoverEL);
+  }
+
+  handleParagraphs(result[0].hifiprototype, 'hifi-Content');
+  handleImgGalleries(result[0].hifigallery, 'hifi-images');
+
+  handleParagraphs(result[0].discoverFigma, 'discover-content');
+  
+  handleParagraphs(result[0].reflection, 'reflection');
+  
+  
+}
+
+function handleImgGalleries(gallery, container) {
+  const galleryContainer = document.getElementById(container);
+  gallery.map(img => {
+    const imgContainer = document.createElement('img');
+    imgContainer.setAttribute('src', img);
+    imgContainer.classList.add('gallery-img');
+    galleryContainer.append(imgContainer);
+  });
+}
+
+function plotTools (data, container) {
+  const toolsContainer = document.getElementById(container);
+  data.map(tool => {
+    const toolImg = document.createElement('img');
+    toolImg.setAttribute('src', `/assets/icons/${tool.slug.current}.svg`);
+    toolImg.setAttribute('alt', `icon of ${tool.software}`);
+    toolsContainer.append(toolImg);
+  })
 }
 
 if (urlString !== undefined) {
@@ -113,6 +200,23 @@ if (urlString === undefined) {
   getAllProjects();
 }
 
+// async function getAboutMe() {
+//   const response = await fetch(`${aboutUrl}${encodeURI(queryAboutMe)}`);
+//   const {result} = await response.json();
+
+//   renderAboutMe(result);
+
+//   function renderAboutMe(result) {
+//     handleParagraphs(result[0]).bio, 'aboutme-content';
+
+//   }
+  
+  
+// }
+
+// if (urlString === undefined) {
+//   getAboutMe();
+// }
 
 
 

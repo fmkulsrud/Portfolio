@@ -15,33 +15,39 @@
             Skip to main content
         </a>
 
-        <header class="header">
+        <header>
             <div class="header--centered">
                 <a href="/" aria-label="back to homepage">
                     Logo
                 </a>
             
-                <nav class="nav">
+                <nav>
                     <ul>
-                        <li>About me</li>
-                        <li>My work</li>
-                        <li>Resume</li>
+                        <li><a href="../about-me/">About me</li></a> 
+                        <li> <a href="../projects/"> My work</li></a>
+                        <li> <a href="../resume/"></a> Resume</li> </a> 
+                            
                         <li class="hire--button"> 
-                            <img class="nav--svg" src="../assets/Phone.svg">
-                            HIRE ME!
+                            <a href=""></a>
+                                <img class="nav--svg" src="../assets/Phone.svg">
+                                HIRE ME!
+                            </a>
                         </li>
+                       
                     </ul>
                 </nav>
                 
                 <nav class="overlay-menu hidden">
                     <ul>
                         <li><a class="close">X</a></li>
-                        <li>About me</li>
-                        <li>My work</li>
-                        <li>Resume</li>
+                        <li><a href="../about-me/">About me</li></a> 
+                        <li> <a href="../projects/"> My work</li></a>
+                        <li> <a href="../resume/"></a> Resume</li> </a> 
                         <li class="hire--button"> 
-                            <img class="nav--svg" src="../assets/Phone.svg">
-                            HIRE ME!
+                            <a href=""></a>
+                                <img class="nav--svg" src="../assets/Phone.svg">
+                                HIRE ME!
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -55,21 +61,18 @@
                 <section class="project-container">
                     <section class="project-container__hero" aria-label="">
                         <div class="project-container__intro">
-                            <h3 class="single-project__title project__title">
+                            <h2 class="single-project__title project__title">
                                 Ride
-                            </h3>
-                            <p class="description regular">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                                Molestiae, earum. Lorem ipsum dolor sit.</p>
+                            </h2>
                             <img class="project__cover"> 
                         </div>
-                    
                     </section>
 
                     <section class="project-overview-container">
                         
-                        <h4 class="sub-heading heading-margin">
+                        <h3 class="heading-margin">
                             Project overview
-                        </h4>
+                        </h3>
 
                         <div class="description">
                             <div class="overview"> 
@@ -78,6 +81,7 @@
                             </div>
                             <div class="overview">
                                 <div id="project_details"></div>
+                                <h4>Tools</h4>
                                 <div id="toolIcons"></div>
                             </div>
                         </div>
@@ -85,137 +89,93 @@
                     </section>
 
                     <section class="user-research-container">
-                        <div class="title-display">
-                            <h4 class="sub-heading">User research</h4>
-                        </div>
                         <div class="description">
-                            <p class="h-margin regular">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                                Esse provident tempora fugiat est maiores molestiae quas, 
-                                maxime repellendus ullam consequatur.
-                            </p>
-                            
-                            <img src="../assets/undraw_interview.png">
+                            <div id="userResearchContent" class="h-margin-8px"></div>
+                            <img class="research-img">
                         </div>
                     </section>
 
-                    <section class="user-research-container">
-                        <div class="title-display">
-                            <h4 class="sub-heading">
-                                Interview feedback
-                            </h4>
-                        </div>
+                    <section class="textBox" class="radius-shadow">
                         <div class="description">
-                            <img src="../assets/undraw_process.svg">
-                            <p class="h-margin regular">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                                Esse provident tempora fugiat est maiores molestiae quas, 
-                                maxime repellendus ullam consequatur.
-                            </p>
-                            
+                            <div id="competitorAnalysisContent"></div>
                         </div>
+                        <div id="competitorGallery"></div>
+                           
+                            
+                        
                     </section>
                     
                     <section class="user-research-container">
-                        <div class="title-display">
-                            <h4 class="sub-heading">
-                                Competitor analysis
-                            </h4>
-                        </div>
                         <div class="description">
-                            <p class="h-margin regular">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                                Esse provident tempora fugiat est maiores molestiae quas, 
-                                maxime repellendus ullam consequatur.
-                            </p>
-                            <img src="../assets/undraw_process.svg">
-                            
+                            <div id="findingsContent"></div>
+                            <div id="findingsGallery" class="findings-Img"></div>
                         </div>
                     </section>
+                </section>
 
-                    <section class="user-research-container">
-                        <div class="title-display">
-                            <h4 class="sub-heading">
-                                Findings
-                            </h4>
-                        </div>
+                
+                <section class="target-container">
+                    <div class="content-background">
+                        <div id="targetContent"></div>
+                    </div>
+                </section>
+
+                <section class="project-container">
+                    <section class="textBox">
                         <div class="description">
-                            <img src="../assets/undraw_process.svg">
-                            <p class="h-margin regular">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                                Esse provident tempora fugiat est maiores molestiae quas, 
-                                maxime repellendus ullam consequatur.
-                            </p>
-                            
+                            <div id="personaContent"></div>
+                            <div id="persona-Img"></div>
                         </div>
                     </section>
 
-                    <section class="target-container">
-                        <h4 class="sub-heading__white">
-                            Target groups
-                        </h4>
-                        <h5 class="sub-heading20 h-margin-8px light">
-                            Primary
-                        </h5>
-                        <p class="text__white">
-                            18-25 år, studenter
-                        </p>
-                        <h5 class="sub-heading20 h-margin-8px light ">
-                            Secondary
-                        </h5>
-                        <p class="text__white">
-                            18-25 år, studenter
-                        </p>
-                        <h5 class="sub-heading20 h-margin-8px light ">
-                            Tertiary
-                        </h5>
-                        <p class="text__white">
-                            18-25 år, studenter
-                        </p>
-                    </section>
-
-                    <section class="user-research-container">
-                        <div class="title-display">
-                            <h4 class="sub-heading">
-                                Personas
-                            </h4>
-                        </div>
-                        <div class="img-container">
-                            <img src="../assets/Susanna persona.jpg">
-                            <img src="../assets/Noah persona.jpg">
-                        </div>
-                    </section>
-
-                    <section class="user-research-container">
+                    <section class="textBox">
                         <div class="wireframes">
-                            <h4 class="sub-heading title-display">
-                                Wireframes
-                            </h4>
-                            <p class="regular">
-                                In the beginining of the process I had a vague idea of the final product. 
-                                I therefore created a lot of different wireframes before moving forward 
-                                with mid & hi wireframes. 
-
-                                I have been consintent in checking the WCAG rules when it comes to contrast 
-                                of colors. I have used a plugin in Figma called “Contrast by Marrk” and also 
-                                contrast-ratio.com. It is important to create platforms that are inclusive 
-                                for everyone. 
-                            </p>
-                            <div class="wireframe-img">
-                                <img src="../assets/Wireframe-ride.jpg" alt="">
-                            </div>
-                        </div>
+                            <div id="wireframesContent"></div>
+                            <div id="wireframes-images"></div>
                         <div>
-                            
-                        </div>
-
                     </section>
-                    
+
+                    <section class="textBox">
+                        <div id="styleContent"></div>
+                        <div id="style-images"></div>
+                        
+                    </section>
+
+                    <section class="textBox">
+                        <div id="iconsContent"></div>
+                        <div id="icons-images"></div>
+                    </section>
+                </section>
+
+                <section>
+                    <img id="prototype-cover">
+                </section>
+
+                <section class="project-container">
+                    <section class="textBox">
+                        <div id="hifi-Content"></div>
+                        <div id="hifi-images"></div>
+                    </section>
+
+                    <section class="textBox-2">
+                        <div id="discover-content"></div>
+                        <div id="prototype"></div>
+                    </section>
+
+                    <section class="textBox">
+                        <div id="reflection"></div>
+                        <div id="reflection-img"></div>
+                    </section>
                 </section>
         </main>
 
         <footer>
-            Footer
+            <p>Please contact  me if you want to have a chat!</p>
+            <div class="contact-icons">
+                <img class="icon-style" src="../assets/icons/Linkedin.svg" alt="Contact me on Linkedin">
+                <img class="icon-style" src="../assets/icons/email.svg" alt="Contact me by email">
+            </div>
+            <p>© 2022  Fredrikke Kulsrud</p>
         </footer>
         
     </body>

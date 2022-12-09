@@ -7,7 +7,7 @@ body {
 }
 
 .body-version2 {
-	background-color: #FEFEFE;
+	background-color: #FBFBFB;
 }
 
 .skip-to {
@@ -24,7 +24,7 @@ body {
 	transform: translateY(0px);
 }
 
-.header {
+header {
 	background-color: var(--background-header);
 	position: relative;
 
@@ -40,7 +40,7 @@ nav ul {
 }
 
 .header--centered {
-	max-width: 47rem;
+	max-width: 67rem;
 	width: 100%;
 	min-height: 5.688rem;
 	margin: 0 auto;
@@ -63,11 +63,12 @@ nav ul {
 	align-items: center;
 	/* align items følger X aksen*/
 	position: relative;
-	/* background-image: url(../assets/pawel-czerwinski-XLUuAayDyHs-unsplash.jpg);
-    background-size: cover;
-    background-position: center; */
 	background-color: #FBFBFB;
 	color: #0B0B0B;
+}
+
+.hero p {
+	margin: 1rem;
 }
 
 .hero .project {
@@ -96,22 +97,24 @@ nav ul {
 /*MOBILE*/
 
 h1 {
-	font-size: 5.25rem;
+	font-size: 4.375rem;
+    font-weight: 700;
 	font-family: var(--app-font);
 	margin: 1rem;
 
 }
 
 h2 {
-	font-size: 3rem;
+	font-size: 3.125rem;
+    font-weight: 700;
 	font-family: var(--app-font);
 }
 
 h3 {
-	font-size: 2.375rem;
-	font-family: var(--app-font);
+	font-size: 2.188rem;
+	font-family: var(--body-font);
 	color: #0B0B0B;
-	font-weight: 600;
+	font-weight: 500;
 	margin: 0 0.313rem;
 }
 
@@ -128,21 +131,51 @@ h4 {
 	padding-top: 10px;
 }
 
-h4.sub-heading {
-	font-weight: 400;
+
+p {
+    font-family: var(--body-font);
+    font-size: 1.125rem;
+    color: #0B0B0B;
+    line-height: 150%;
 }
 
-h4.sub-heading__white {
-	color: #FBFBFB;
-	font-weight: 400;
+li {
+    color: #0B0B0B;
+    padding: 0.313;
 }
 
-p.small {
-	font-size: var(--body-font);
-	font-family: var(--body-font);
-	font-weight: 400;
-	line-height: 150%;
-	color: #0B0B0B;
+footer {
+    max-width: 100%;
+    background-color: #26232D;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0.625rem;
+    height: 200px;
+}
+
+footer p {
+    color: #FEFEFE;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-style {
+    padding: 1rem;
+}
+
+.user-research-container p {
+    font-size: 1.125rem;
+    padding: 1rem 0;
+}
+
+.user-research-container li {
+    font-size: 1.125rem;
+    padding: 0.3rem;
 }
 
 p.regular {
@@ -150,9 +183,6 @@ p.regular {
 	color: #0B0B0B;
 }
 
-p.large {
-	font-size: 1.25rem;
-}
 
 p.text__white {
 	color: #FBFBFB;
@@ -163,26 +193,17 @@ p.text__white {
 	color: #0B0B0B;
 }
 
-.sub-heading20 {
-	font-size: 1.125rem;
-	font-weight: 600;
-	font-family: var(--body-font);
-
-}
-
 .card {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
-	margin: 2.25rem 0;
+	margin: 1rem 0;
 	text-decoration: none;
 	color: #fff;
 }
 
-
 .card img {
-	max-width: 31.25rem;
-	max-height: 17.875rem;
+	max-width: 100%;
 }
 
 
@@ -206,6 +227,28 @@ p.text__white {
 	gap: 0.5rem;
 }
 
+.about-container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 0 1rem;
+}
+
+.about-container p {
+	padding: 1rem 0;
+	max-width: 60ch;
+}
+
+.about-container img {
+	max-width: 50%;
+	max-height: 30%;
+	padding: 1rem 0;
+}
+
+
 
 /*--*/
 
@@ -215,6 +258,10 @@ p.text__white {
 
 .card--content p {
 	padding: 1rem 0;
+}
+
+.card--content h3 {
+    color: #FEFEFE;
 }
 
 .nav {
@@ -242,7 +289,6 @@ p.text__white {
 
 .hidden {
 	display: none;
-
 }
 
 .close {
@@ -264,7 +310,6 @@ p.text__white {
 	color: #FEFEFE;
 }
 
-
 .button--read {
 	width: 13.875rem;
 	height: 3.75rem;
@@ -280,7 +325,7 @@ p.text__white {
 
 
 .hero .main-title-site {
-	margin: auto 0;
+	margin: 2rem 0;
 }
 
 .hero .intro-container {
@@ -310,7 +355,6 @@ p.text__white {
 }
 
 .hire--button {
-	/* Auto layout */
 
 	display: flex;
 	flex-direction: row;
@@ -322,8 +366,6 @@ p.text__white {
 	width: 165px;
 	height: 52px;
 	align-self: flex-end;
-
-	/* Secondary/Light purple */
 
 	background: #EADBF8;
 	box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.05);
@@ -358,10 +400,11 @@ p.text__white {
 .description {
 	display: inline-flex;
 	flex-direction: column;
-	margin: 16px;
+	margin: 8px;
 	gap: 0px 48px;
 	/* flex-wrap: wrap; */
 	justify-content: center;
+    padding: 2rem 1.2rem;
 }
 
 .overview {
@@ -375,10 +418,6 @@ p.text__white {
 .heading-margin {
 	margin: 1rem;
 }
-
-/* .h-margin-8px {
-    margin: 8px 0;
-} */
 
 .project-container {
 	max-width: var(--max-width);
@@ -420,7 +459,7 @@ p.text__white {
 	flex-direction: column;
 	background-color: #26232D;
 	width: 100%;
-	padding: 2rem 1rem;
+	padding: 2rem 1.2rem;
 }
 
 .img-container {
@@ -431,18 +470,25 @@ p.text__white {
 	align-items: center;
 }
 
-
 .white-text {
 	color: var(--font-color);
 }
 
+#styleContent{
+    padding: 2rem 1.2rem;
+}
+
+.mockup-imgs {
+    display: flex;
+    flex-direction: column;
+}
 
 .wireframes {
 	display: flex;
 	flex-direction: column;
 	max-width: var(--max-width);
 	align-items: flex-start;
-
+    padding: 2rem 1.2rem;
 }
 
 .title-display {
@@ -454,6 +500,70 @@ p.text__white {
 	width: 100%;
 }
 
+#targetContent h4 {
+    color: #FBFBFB;
+    padding: 1rem 0;
+}
+
+#targetContent h3 {
+    color: #FBFBFB;
+}
+
+
+
+#targetContent p {
+    color: #FBFBFB;
+}
+
+.gallery-img {
+    max-width: 100%;
+}
+
+.radius-shadow {
+    box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+}
+
+.content-background {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 auto;
+}
+
+#iconsContent {
+    padding: 2rem 1.2rem
+}
+
+#icons-images {
+    padding: 2rem 1.2rem;
+}
+
+#hifi-Content {
+    padding: 2rem 1.2rem;
+}
+
+#hifi-images {
+    padding: 2rem 1.2rem;
+    
+}
+
+#discover-content {
+    padding: 2rem 1.2rem;
+}
+
+#reflection {
+    padding: 2rem 1.2rem;
+}
+
+#reflection-img {
+    padding: 2rem 1.2rem;
+}
+
+
+
 
 /*DESKTOP*/
 
@@ -463,6 +573,7 @@ p.text__white {
 		font-size: 8.75rem;
 		font-family: var(--app-font);
 		margin: 0;
+        font-weight: 700;
 	}
 
 	h1.project__title {
@@ -470,29 +581,25 @@ p.text__white {
 	}
 
 	h2 {
-		font-size: 6.25rem;
+		font-size: 4.375rem;
 		font-family: var(--app-font);
 		font-weight: 700;
 	}
 
 	.card-title h2 {
 		margin: 1.375rem 0;
+
 	}
 
 	h3 {
-		font-size: 4.375rem;
-		font-family: var(--app-font);
-		color: #0B0B0B;
-		font-weight: 700;
-	}
-
-
-	h3.sub-heading__white {
 		font-size: 3.125rem;
-		font-family: var(--app-font);
-		color: #FBFBFB;
+		font-family: var(--body-font);
+		color: #0B0B0B;
 		font-weight: 500;
 	}
+
+
+	
 
 	h4 {
 		font-size: 1.563rem;
@@ -501,19 +608,11 @@ p.text__white {
 		font-weight: 500;
 	}
 
-	h4.sub-heading {
-		font-size: 3.125rem;
-		font-family: var(--app-font);
-		color: #0B0B0B;
-		font-weight: 500;
-	}
-
-	.sub-heading20 {
-		font-size: 1.25rem;
-		font-weight: 500;
-		font-family: var(--body-font);
-
-	}
+    .description h4 {
+        font-size: 1.563rem;
+        color: #0B0B0B;
+        padding-top: 10px;
+    }
 
 	h5 {
 		font-size: 2.438rem;
@@ -525,6 +624,10 @@ p.text__white {
 	h5.light {
 		color: var(--font-color);
 	}
+
+    .findings-Img {
+        width: 800px;
+    }
 
 	p.small {
 		font-size: 1.125rem;
@@ -544,7 +647,7 @@ p.text__white {
 	}
 
 
-	.nav {
+    nav {
 		font-family: var(--body-font);
 		color: #0B0B0B;
 		font-size: 1.25rem;
@@ -580,6 +683,10 @@ p.text__white {
 
 	}
 
+	.hero .main-title-site {
+		margin: auto 0;
+	}
+
 	.project-overview-container {
 		width: 100%;
 		background-color: #EADBF8;
@@ -592,6 +699,9 @@ p.text__white {
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+    
 	}
 
 	.white-text {
@@ -608,6 +718,36 @@ p.text__white {
 
 	}
 
+    .textBox {
+        width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		color: #0B0B0B;
+		padding: 2rem 1.2rem;
+		align-items: flex-start;
+    }
+
+    .textBox p {
+        font-size: 1.125rem;
+    }
+
+    .textBox-2 {
+        width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		color: #0B0B0B;
+		padding: 2rem 1.2rem;
+		align-items: center;
+    }
+
+    .textBox-2 p {
+        font-size: 1.125rem;
+    }
+
+
+
 	.user-research-container {
 		width: 100%;
 		display: block;
@@ -616,17 +756,35 @@ p.text__white {
 		color: #0B0B0B;
 		padding: 2rem 1rem;
 		align-items: center;
-
 	}
+
+    .user-research-container p {
+        font-size: 1.125rem;
+    }
 
 	.target-container {
-		background-color: #26232D;
 		width: 100%;
+        padding: 2rem 13rem;
 	}
 
-	.description {
-		flex-direction: row;
-	}
+    .projects-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 3rem;
+    }
+    
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 2.25rem 0;
+        text-decoration: none;
+        color: #fff;
+    }
 
+    .card img {
+        max-width: 31.25rem;
+        max-height: 17.875rem;
+    }
 
 }
