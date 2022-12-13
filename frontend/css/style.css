@@ -115,6 +115,21 @@ button:hover {
 
 }
 
+.about-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+}
+
+.CV-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
 /*MOBILE*/
 
 h1 {
@@ -158,6 +173,10 @@ p {
     font-size: 1.125rem;
     color: #0B0B0B;
     line-height: 150%;
+}
+
+p .stronger {
+	font-weight: 700;
 }
 
 li {
@@ -253,8 +272,8 @@ p.text__white {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	/* align-items: center; */
+	/* justify-content: center; */
 	padding: 0 1rem;
 }
 
@@ -301,11 +320,13 @@ p.text__white {
 .overlay-menu {
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(255, 255, 255, 1);
 	z-index: 100;
 	position: absolute;
 	top: 0;
 	left: 0;
+	
+
 }
 
 .hidden {
@@ -321,14 +342,24 @@ p.text__white {
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 	font-size: 2rem;
 	text-decoration: none;
+	list-style: none;
 }
+
+
 
 .overlay-menu a {
 	text-decoration: none;
-	color: #FEFEFE;
+	color: #0B0B0B;
+	margin: 2rem 1rem;
+
+}
+
+.overlay-menu a:hover{
+	font-weight: 600;
+
 }
 
 .button--read {
@@ -533,8 +564,6 @@ p.text__white {
     color: #FBFBFB;
 }
 
-
-
 #targetContent p {
     color: #FBFBFB;
 }
@@ -552,9 +581,9 @@ p.text__white {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    padding: 0 auto;
+    max-width: var(--max-width);
 }
 
 #iconsContent {
@@ -682,7 +711,7 @@ p.text__white {
 	
 	.hero {
 		width: 100vw;
-		height: 80vh;
+		height: 70vh;
 		display: flex;
 		flex-flow: column nowrap;
 		/* justify-content: center; */

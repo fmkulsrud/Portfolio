@@ -34,6 +34,11 @@ export function handleParagraphs(blockContent, container) {
                 if(p.listItem === 'bullet') {
                     pEl = document.createElement('li');
                 }
+                if(p?.children?.[0].marks?.[0] === "strong") {
+                    pEl = document.createElement("strong");
+                }
+                
+
                 if(p.markDefs.length > 0 && p.markDefs[0].href !== undefined){
                     pEl = document.createElement('a');
                     pEl.setAttribute('href', p.markDefs[0].href);
