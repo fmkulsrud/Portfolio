@@ -151,7 +151,7 @@ h3 {
 	font-family: var(--body-font);
 	color: #0B0B0B;
 	font-weight: 500;
-	margin: 0 0.313rem;
+	/* margin: 0 0.313rem; */
 }
 
 h4 {
@@ -451,11 +451,11 @@ p.text__white {
 .description {
 	display: inline-flex;
 	flex-direction: column;
-	margin: 8px;
+	/* margin: 8px; */
 	gap: 0px 48px;
 	/* flex-wrap: wrap; */
 	justify-content: center;
-    padding: 2rem 1.2rem;
+    /* padding: 2rem 1.2rem; */
 }
 
 .overview {
@@ -534,6 +534,16 @@ p.text__white {
     flex-direction: column;
 }
 
+.flex-container {
+	display: flex;
+	justify-content: center;
+}
+
+.box-space {
+	margin: 8px;
+	padding: 2rem 1.2rem;
+}
+
 .wireframes {
 	display: flex;
 	flex-direction: column;
@@ -553,6 +563,10 @@ p.text__white {
 
 .project__blockImg {
 	width: 100%;
+}
+
+#targetContent {
+    width: 100%;
 }
 
 #targetContent h4 {
@@ -579,6 +593,7 @@ p.text__white {
 
 .content-background {
     display: flex;
+	width: 100%;
     flex-wrap: nowrap;
     justify-content: flex-start;
     flex-direction: column;
@@ -785,6 +800,10 @@ p.text__white {
 		color: #FEFEFE;
 	}
 
+	.sub-title {
+		font-size: 3.125rem;
+	}
+
 	.h-margin {
 		margin: 1rem;
 		padding: 0;
@@ -801,7 +820,6 @@ p.text__white {
 		flex-direction: column;
 		justify-content: space-between;
 		color: #0B0B0B;
-		padding: 2rem 1.2rem;
 		align-items: flex-start;
     }
 
@@ -831,7 +849,6 @@ p.text__white {
 		flex-direction: row;
 		justify-content: space-between;
 		color: #0B0B0B;
-		padding: 2rem 1rem;
 		align-items: center;
 	}
 
@@ -842,6 +859,7 @@ p.text__white {
 	.target-container {
 		width: 100%;
         padding: 2rem 13rem;
+		align-items: center;
 	}
 
     .projects-wrapper {
