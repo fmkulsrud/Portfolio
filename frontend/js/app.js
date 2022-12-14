@@ -205,25 +205,26 @@ if (urlString === undefined) {
   getAllProjects();
 }
 
-// async function getAboutMe() {
-//   const response = await fetch(`${aboutUrl}${encodeURI(queryAboutMe)}`);
-//   const {result} = await response.json();
-
-//   renderAboutMe(result);
-
-//   function renderAboutMe(result) {
-//     handleParagraphs(result[0]).bio, 'aboutme-content';
-
-//   }
-  
-  
-// }
-
-// if (urlString === undefined) {
-//   getAboutMe();
-// }
 
 
+//Get the button:
+let mybutton = document.getElementById("myBtn");
+
+//When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+};
+
+//When the user click on the button, scroll to the top of the document
+function topFunction() {
+  document.documentElement.scrollTop = 0;
+}
 
 
 
