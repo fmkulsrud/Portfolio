@@ -3,7 +3,6 @@ export default function handleHambuger () {
     const overlayMenuEl = document.querySelector('.overlay-menu');
     const exitMenuEl = document.querySelector('.close')
     
-
     /* e er en naturlig oppførsel, men å bruke prevent så nullstiller vi.*/
     hamburgerIconEl.addEventListener('click', (e) => {
         e.preventDefault();
