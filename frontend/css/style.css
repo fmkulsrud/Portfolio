@@ -12,6 +12,10 @@ h1 {
 	font-family: var(--app-font);
 }
 
+.card-title {
+	margin-bottom: 10px;
+}
+
 .body-version2 {
 	background-color: #FBFBFB;
 }
@@ -376,11 +380,16 @@ p.text__white {
 	background-color: #EADBF8;
 	border-radius: 10px;
 	color: #0B0B0B;
+	/* cursor: grabbing; */
 	/* border-radius: 0.5rem; */
 }
 
 .button--read img {
 	width: 2rem;
+}
+
+.button--read:hover {
+	cursor: pointer;
 }
 
 
@@ -709,7 +718,6 @@ p.text__white {
 
 	.card-title h2 {
 		margin: 1.375rem 0;
-
 	}
 
 	h3 {
@@ -769,7 +777,7 @@ p.text__white {
 	
 	.hero {
 		width: 100vw;
-		height: 60vh;
+		height: 40vh;
 		display: flex;
 		flex-flow: column nowrap;
 		/* justify-content: center; */
