@@ -717,6 +717,10 @@ p.text__white {
 		font-weight: 700;
 	}
 
+	.dark-font h2 {
+		color: #0B0B0B;
+	}
+
 	.card-title h2 {
 		margin: 1.375rem 0;
 	}
