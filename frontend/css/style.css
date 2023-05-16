@@ -717,9 +717,6 @@ p.text__white {
 		font-weight: 700;
 	}
 
-	.dark-font h2 {
-		color: #0B0B0B;
-	}
 
 	.card-title h2 {
 		margin: 1.375rem 0;
@@ -727,7 +724,7 @@ p.text__white {
 
 	h3 {
 		font-size: 3.125rem;
-		font-family: var(--body-font);
+		font-family: var(--app-font);
 		color: #0B0B0B;
 		font-weight: 500;
 	}
