@@ -548,6 +548,7 @@ p.text__white {
     padding: 1rem 0;
 }
 
+
 .mockup-imgs {
     display: flex;
     flex-direction: column;
@@ -878,6 +879,7 @@ p.text__white {
 
     .textBox p {
         font-size: 1.125rem;
+		padding: 1rem 0;
     }
 
     .textBox-2 {
