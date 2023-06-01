@@ -192,7 +192,7 @@ async function getAllProjects() {
 
       const imageEl = document.createElement('img');
       imageEl.setAttribute('src', './assets/arrow_b.svg')
-      buttonEl.innerText = 'Read more'
+      buttonEl.innerText = 'Continue to case'
       buttonEl.append(imageEl)
       contentEl.append(buttonEl)
       cardEl.append(contentEl);

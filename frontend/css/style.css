@@ -507,11 +507,14 @@ p.text__white {
 
 .project-overview-container {
 	width: 100%;
-	background-color: #EADBF8;
+	border-color: #EADBF8;
+	border-style: solid;
+	border: 2px;
 	border-radius: 7.31189px;
-	box-shadow: 3.65594px 3.65594px 7.31189px rgba(0, 0, 0, 0.05);
+	/* box-shadow: 3.65594px 3.65594px 7.31189px rgba(0, 0, 0, 0.05); */
 	color: #0B0B0B;
 	padding: 12px;
+	margin: 10px 0;
 }
 
 .h-margin {
@@ -835,10 +838,12 @@ p.text__white {
 
 	.project-overview-container {
 		width: 100%;
-		background-color: #EADBF8;
+		border-color: #EADBF8;
+		border-style: solid;
 		border-radius: 7.31189px;
-		box-shadow: 3.65594px 3.65594px 7.31189px rgba(0, 0, 0, 0.05);
+		/* box-shadow: 3.65594px 3.65594px 7.31189px rgba(0, 0, 0, 0.05); */
 		color: #0B0B0B;
+		margin: 10px 0;
 	}
 
 	.description {
