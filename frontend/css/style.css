@@ -744,7 +744,7 @@ p.text__white {
         padding-top: 10px;
     }
 
-	h5 {
+	/* h5 {
 		font-size: 2.438rem;
 		font-weight: 700;
 		font-family: var(--body-font);
@@ -753,7 +753,7 @@ p.text__white {
 
 	h5.light {
 		color: var(--font-color);
-	}
+	} */
 
     .findings-Img {
         width: 800px;
