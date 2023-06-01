@@ -182,8 +182,9 @@ p .stronger {
 }
 
 li {
-    color: #0B0B0B;
+    color: #FEFEFE;
     padding: 0.313;
+	margin: 8px 0;
 }
 
 footer {
