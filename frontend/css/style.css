@@ -142,6 +142,7 @@ h2 {
 	font-size: 3.125rem;
     font-weight: 700;
 	font-family: var(--body-font);
+	margin: 0 10px;
 }
 
 h3 {
@@ -149,7 +150,7 @@ h3 {
 	font-family: var(--body-font);
 	color: #0B0B0B;
 	font-weight: 500;
-	/* margin: 0 0.313rem; */
+
 }
 
 h4 {
@@ -171,6 +172,7 @@ p {
     font-size: 1.125rem;
     color: #0B0B0B;
     line-height: 150%;
+	/* margin: 0 24px; */
 }
 
 p .stronger {
@@ -196,6 +198,7 @@ footer {
     align-items: center;
     padding: 2rem 0.625rem;
     height: 200px;
+	margin: 0 16px;
 }
 
 footer p {
@@ -514,6 +517,15 @@ p.text__white {
 	margin: 10px 0;
 }
 
+.details-box {
+	display: flex;
+	justify-content: center;
+    /* color: #0B0B0B!important;
+	border: 2px solid; */
+	padding: 20px 0;
+	margin: 0 10px;
+}
+
 .h-margin {
 	margin: 0;
 	padding: 0 0 1rem 0;
@@ -546,6 +558,11 @@ p.text__white {
 
 #styleContent p{
     padding: 1rem 0;
+	margin: 0 24px;
+}
+
+#styleContent h3{
+	margin: 0 24px;
 }
 
 
@@ -561,7 +578,7 @@ p.text__white {
 
 .box-space {
 	margin: 8px;
-	padding: 2rem 1.2rem;
+	padding: 0.5rem 1.2rem;
 }
 
 .wireframes {
@@ -603,7 +620,9 @@ p.text__white {
 }
 
 .gallery-img {
-    max-width: 100%;
+	display: flex;
+    max-width: 90%;
+	margin: auto;
 }
 
 .radius-shadow {
@@ -689,7 +708,7 @@ p.text__white {
 }
 
 
-
+/*------------------------------------------------------------------------------------------/
 /*DESKTOP*/
 
 @media screen and (min-width: 540px) {
@@ -741,8 +760,16 @@ p.text__white {
     .description h4 {
         font-size: 1.953rem;
         color: #0B0B0B;
-        padding-top: 10px;
+        padding-top: 16px;
     }
+
+	p {
+		font-family: var(--body-font);
+		font-size: 1.125rem;
+		color: #0B0B0B;
+		line-height: 150%;
+		
+	}
 
 	/* h5 {
 		font-size: 2.438rem;
@@ -754,6 +781,10 @@ p.text__white {
 	h5.light {
 		color: var(--font-color);
 	} */
+
+	.gallery-img {
+		max-width: 100%;
+	}
 
     .findings-Img {
         width: 800px;
@@ -790,6 +821,13 @@ p.text__white {
 		color: #0B0B0B;
 	}
 
+	.details-box {
+		display: flex;
+		justify-content: center;
+		/* color: #0B0B0B!important;
+		border: 2px solid; */
+		padding: 20px 0;
+	}
 
     nav {
 		font-family: var(--body-font);
@@ -852,7 +890,7 @@ p.text__white {
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: flex-start;
-        flex-direction: row;
+        /* flex-direction: row; */
         align-items: flex-start;
     
 	}
@@ -889,6 +927,8 @@ p.text__white {
         font-size: 1.125rem;
 		padding: 1rem 0;
     }
+
+	
 
     .textBox-2 {
         width: 100%;
