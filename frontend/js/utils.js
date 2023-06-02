@@ -15,48 +15,65 @@ export function readUrl() {
 export function handleParagraphs(blockContent, container) {
     const blockContainer = document.getElementById(container);
 
-    if(blockContent && blockContent.length > 0) {
-        blockContent.map(p  => {
-            if(p._type === 'block'){
+    if (blockContent && blockContent.length > 0) {
+        blockContent.forEach(p => {
+            if (p._type === 'block') {
                 let pEl = document.createElement('p');
-                if(p.style === 'h1') {
+
+                if (p.style === 'h1') {
                     pEl = document.createElement('h1');
-                }
-                if(p.style === 'h2') {
+                } else if (p.style === 'h2') {
                     pEl = document.createElement('h2');
-                }
-                if(p.style === 'h3') {
+                } else if (p.style === 'h3') {
                     pEl = document.createElement('h3');
-                }
-                if(p.style === 'h4') {
+                } else if (p.style === 'h4') {
                     pEl = document.createElement('h4');
-                }                
-                if(p.listItem === 'bullet') {
+                } else if (p.listItem === 'bullet') {
                     pEl = document.createElement('li');
                 }
-                if(p?.children?.[0].marks?.[0] === "strong") {
-                    pEl = document.createElement("strong");
-                }
-                
 
-                if(p.markDefs.length > 0 && p.markDefs[0].href !== undefined){
-                    pEl = document.createElement('a');
-                    pEl.setAttribute('href', p.markDefs[0].href);
-                    pEl.setAttribute('target', '_blank');
+                p.children.forEach(child => {
+                    if (child.marks && child.marks[0] === 'strong') {
+                        const strongEl = document.createElement('strong');
+                        strongEl.textContent = child.text;
+                        pEl.appendChild(strongEl);
+                    } else {
+                        const textArray = child.text.split('<strong>');
+                        textArray.forEach((text, index) => {
+                            if (text) {
+                                const textNode = document.createTextNode(text);
+                                pEl.appendChild(textNode);
+                            }
+
+                            if (index < textArray.length - 1) {
+                                const strongEl = document.createElement('strong');
+                                strongEl.textContent = textArray[index + 1].split('</strong>')[0];
+                                pEl.appendChild(strongEl);
+                            }
+                        });
+                    }
+                });
+
+                if (p.markDefs.length > 0 && p.markDefs[0].href !== undefined) {
+                    const aEl = document.createElement('a');
+                    aEl.setAttribute('href', p.markDefs[0].href);
+                    aEl.setAttribute('target', '_blank');
+                    aEl.appendChild(pEl);
+                    pEl = aEl;
                 }
-                pEl.textContent = p.children[0].text;
-                blockContainer.append(pEl)
-                
+
+                blockContainer.appendChild(pEl);
             }
+
             if (p._type === 'image') {
                 const fileNameArray = p.asset._ref.split('-');
                 const fileName = `${fileNameArray[1]}-${fileNameArray[2]}.${fileNameArray[3]}`;
                 const imgEL = document.createElement('img');
                 imgEL.setAttribute('src', `${cdnUrl}${fileName}`);
                 imgEL.classList.add('project__blockImg');
-                blockContainer.append(imgEL);
-
+                blockContainer.appendChild(imgEL);
             }
         });
     }
-};
+}
+

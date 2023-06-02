@@ -21,12 +21,13 @@ const queryAllProjects = `
 const querySingleProject = `
   *[slug.current == "${urlString}"] {
     title,
+    details,
     "cover":  heroimg.asset->url,
     projectPitch,
     shortProjectPitch,
     shortdescription,
     projectDetails,
-    tools[]->,
+    
     userReasearch,
     "researchimg": researchimg.asset->url,
     comeptitor,
@@ -77,11 +78,14 @@ function renderSingleProject (result) {
   titleEl.textContent = result[0].title
   const coverProjectEl = document.querySelector('.project__cover');
   coverProjectEl.setAttribute('src', result[0].cover);
-
+  
+  // const tilteDetails = document.querySelector('.project__details');
+  // titleEl.textContent = result[0].details
+  handleParagraphs(result[0].details, 'detailContent');
 
   handleParagraphs(result[0].shortdescription, 'briefContent');
   handleParagraphs(result[0].projectDetails, 'project_details');
-  plotTools(result[0].tools, 'toolIcons');
+  // plotTools(result[0].tools, 'toolIcons');
   handleParagraphs(result[0].userReasearch, 'userResearchContent');
   
   const researchImgEl = document.querySelector(".research-img");
@@ -138,15 +142,15 @@ function handleImgGalleries(gallery, container) {
   };
 }
 
-function plotTools (data, container) {
-  const toolsContainer = document.getElementById(container);
-  data.map(tool => {
-    const toolImg = document.createElement('img');
-    toolImg.setAttribute('src', `/assets/icons/${tool.slug.current}.svg`);
-    toolImg.setAttribute('alt', `icon of ${tool.software}`);
-    toolsContainer.append(toolImg);
-  })
-}
+// function plotTools (data, container) {
+//   const toolsContainer = document.getElementById(container);
+//   data.map(tool => {
+//     const toolImg = document.createElement('img');
+//     toolImg.setAttribute('src', `/assets/icons/${tool.slug.current}.svg`);
+//     toolImg.setAttribute('alt', `icon of ${tool.software}`);
+//     toolsContainer.append(toolImg);
+//   })
+// }
 
 if (urlString !== undefined) {
   getProject();

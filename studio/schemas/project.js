@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'details',
+            title: 'Details',
+            type: 'blockContent',
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
@@ -29,19 +34,19 @@ export default {
             type: 'blockContent'
         },
         
-        {
-            name: 'tools',
-            title: 'Tools',
-            type: 'array',
-            of: [
-                {
-                    type: 'reference',
-                    to: [
-                        {type: 'software'}
-                    ]
-                }
-            ]
-        },
+        // {
+        //     name: 'tools',
+        //     title: 'Tools',
+        //     type: 'array',
+        //     of: [
+        //         {
+        //             type: 'reference',
+        //             to: [
+        //                 {type: 'software'}
+        //             ]
+        //         }
+        //     ]
+        // },
         {
             name: 'role',
             title: 'Role',
