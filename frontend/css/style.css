@@ -437,7 +437,7 @@ p.text__white {
 	align-items: center;
 	padding: 10px;
 	gap: 10px;
-
+	color: black;
 	width: 165px;
 	height: 52px;
 	align-self: flex-end;
