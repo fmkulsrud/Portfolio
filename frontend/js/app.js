@@ -21,13 +21,14 @@ const queryAllProjects = `
 const querySingleProject = `
   *[slug.current == "${urlString}"] {
     title,
+    subtext,
     details,
     "cover":  heroimg.asset->url,
     projectPitch,
-    shortProjectPitch,
+    
     shortdescription,
     problem,
-    
+    goals,
     userReasearch,
     "researchimg": researchimg.asset->url,
     comeptitor,
@@ -86,6 +87,7 @@ function renderSingleProject (result) {
   handleParagraphs(result[0].shortdescription, 'briefContent');
   handleParagraphs(result[0].projectDetails, 'project_details');
   // plotTools(result[0].tools, 'toolIcons');
+  handleParagraphs(result[0].problem, 'problemContent')
   handleParagraphs(result[0].userReasearch, 'userResearchContent');
   
   const researchImgEl = document.querySelector(".research-img");

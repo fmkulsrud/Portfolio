@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'subtext',
+            tile: "Sub-text",
+            type: "string",
+        },
+        {
             name: 'details',
             title: 'Details',
             type: 'blockContent',
@@ -28,11 +33,11 @@ export default {
             type: 'image'
         }, 
         
-        {
-            name: 'shortProjectPitch',
-            title: 'Short project pitch',
-            type: 'blockContent'
-        },
+        // {
+        //     name: 'shortProjectPitch',
+        //     title: 'Short project pitch',
+        //     type: 'blockContent'
+        // },
         
         // {
         //     name: 'tools',
@@ -84,6 +89,11 @@ export default {
         {
             name: 'problem',
             title: 'The Problem',
+            type: 'blockContent'
+        },
+        {
+            name: 'goals',
+            tile: 'Goals',
             type: 'blockContent'
         },
         {
