@@ -82,8 +82,8 @@ export default {
             type: 'blockContent'
         },
         {
-            name: 'projectDetails',
-            title: 'Project Details',
+            name: 'problem',
+            title: 'The Problem',
             type: 'blockContent'
         },
         {

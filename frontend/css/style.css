@@ -237,6 +237,7 @@ p.text__white {
 .project-overview-container p {
 	font-size: 1.125rem;
 	color: #0B0B0B;
+	padding: 8px 0;
 }
 
 .card {

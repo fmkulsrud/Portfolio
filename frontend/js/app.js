@@ -26,7 +26,7 @@ const querySingleProject = `
     projectPitch,
     shortProjectPitch,
     shortdescription,
-    projectDetails,
+    problem,
     
     userReasearch,
     "researchimg": researchimg.asset->url,
