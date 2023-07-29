@@ -1,9 +1,13 @@
 import handleHambuger from './menu.js';
+import { activeNavbar } from './navbar.js';
 import { readUrl } from './utils.js';
 import { aboutUrl, sanityUrl } from './env.js';
 import {handleParagraphs} from './utils.js';
 
 handleHambuger();
+window.onload = function () {
+  activeNavbar();
+};
 const urlString = readUrl();
 
 //querystring for sanity

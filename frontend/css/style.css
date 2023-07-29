@@ -41,6 +41,7 @@ header {
 }
 
 .desktop-nav ul {
+	font-size: 1rem;
 	list-style: none;
 	display: flex;
 	gap: 3rem;
@@ -61,6 +62,9 @@ header {
 	padding: 2px;
 }
 
+.active a {
+    text-decoration: underline;
+  }
 
 .header--centered {
 	max-width: 70rem;
@@ -441,6 +445,7 @@ p.text__white {
 }
 
 .hire--button {
+	font-size: 1rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -448,7 +453,7 @@ p.text__white {
 	padding: 10px;
 	gap: 10px;
 	color: black;
-	width: 165px;
+	width: 126px;
 	height: 52px;
 	align-self: flex-end;
 	border-style: solid;
