@@ -66,6 +66,12 @@ header {
     text-decoration: underline;
   }
 
+.about-header{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .header--centered {
 	max-width: 70rem;
 	min-height: 5.688rem;
@@ -90,7 +96,6 @@ button {
 button:hover {
     opacity: 0.7;
 }
-
 
 .hero {
 	width: 100vw;
@@ -132,17 +137,19 @@ background-color: #26232D;
 
 .about-text {
 	display: flex;
-	justify-content: center;
+	width: 752px;
+	height: 473px;
+	padding: 24px 0px;
+	justify-content: space-between;
 	align-items: center;
-	flex-direction: column;
+	gap: 32px;
 	
 }
 
 .CV-img {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+	width: 228.715px;
+	flex-shrink: 0;
+	align-self: stretch;
 }
 
 #toolIcons img {
@@ -301,14 +308,19 @@ p.text__white {
 	padding: 0 1rem;
 }
 
+.about-container h3 {
+	font-family: var(--app-font);
+	font-weight: 700;
+}
+
 .about-container p {
 	padding: 1rem 0;
-	max-width: 60ch;
+	/* max-width: 60ch; */
 }
 
 .about-container img {
-	max-width: 50%;
-	max-height: 30%;
+	/* /* max-width: 50%; */
+	max-height: 100%; 
 	padding: 1rem 0;
 }
 
