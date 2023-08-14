@@ -650,7 +650,7 @@ ul .bullet-points {
 }
 
 .box-space {
-	margin: 24px 0 24px auto;
+	/* margin: 24px 0 24px auto; */
 	padding: 0.5rem 1.2rem;
 }
 
