@@ -103,7 +103,7 @@ function renderSingleProject (result) {
   handleParagraphs(result[0].findings, 'findingsContent');
   handleImgGalleries(result[0].findingsimg, 'findingsGallery');
   
-  handleParagraphs(result[0].targetGroupsContainer, 'targetContent');
+  // handleParagraphs(result[0].targetGroupsContainer, 'targetContent');
   handleParagraphs(result[0].personas, 'personaContent');
   handleImgGalleries(result[0].personasGallery, 'persona-Img');
 
