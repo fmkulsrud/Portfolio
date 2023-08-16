@@ -6,11 +6,9 @@ body {
 	font-family: var(--body-font);
 }
 
-h1 {
-	font-size: 3.583rem;
-    font-weight: 900;
-	font-family: var(--app-font);
-}
+/*--------text size---------*/
+
+
 
 .card-title {
 	margin-bottom: 10px;
@@ -165,10 +163,13 @@ button {
 
 /*MOBILE*/
 
+/*--------text size-----------*/
 
 
 h1 {
-	font-size: 2.441rem;
+	font-size: 3.583rem;
+    font-weight: 900;
+	font-family: var(--app-font);
 }
 
 h2 {
@@ -186,23 +187,10 @@ h3 {
 
 }
 
-h4 {
-	font-size: 2rem;
-	font-family: var(--body-font);
-	color: #0B0B0B;
-	font-weight: 400;
-}
-
-.description h4 {
-	font-size: 1.8rem;
-	color: #0B0B0B;
-	padding-top: 10px;
-}
-
 
 p {
     font-family: var(--body-font);
-    font-size: 1.125rem;
+    /* font-size: 1.125rem; */
     color: #0B0B0B;
     line-height: 150%;
 	/* margin: 0 24px; */
@@ -238,6 +226,66 @@ footer p {
     color: #FEFEFE;
 }
 
+/*----------Space---------*/
+
+/*------Margin------*/
+
+.m-sm {
+	margin: 4px;
+}
+
+.m-base {
+	margin: 8px;
+}
+
+.m-rg {
+	margin: 16px;
+}
+
+.m-l {
+	margin: 24px;
+}
+
+.m-xl {
+	margin: 32px;
+}
+
+/*-------Padding--------*/
+
+.p-sm {
+	padding: 4px;
+}
+
+.p-base {
+	padding: 8px;
+}
+
+.p-rg {
+	padding: 16px;
+}
+
+.p-l {
+	padding: 24px;
+}
+
+.p-xl {
+	padding: 32px;
+}
+
+.p-xxxl {
+	padding: 32px;
+}
+
+.px-xxl {
+	padding-left: 24px;
+	padding-right: 24px
+}
+
+.py-xxxl {
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
 .contact-icons {
     display: flex;
     flex-direction: row;
@@ -270,6 +318,10 @@ p.text__white {
 	font-size: 1.125rem;
 	color: #0B0B0B;
 	padding: 8px 0;
+}
+
+.bigger-p {
+	font-size: 1.125rem;
 }
 
 ul .bullet-points {
@@ -400,7 +452,7 @@ ul .bullet-points {
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	text-decoration: none;
 	list-style: none;
 	margin: 0;
@@ -496,10 +548,6 @@ ul .bullet-points {
 	align-self: flex-end;
 	border-style: solid;
 	transition-duration: 0.1s;
-	/* border-color: #EADBF8;
-	border-width: 2px;
-	/* background: rgba(234, 219, 248, 0.50); */
-	/* background-color: #FBFBFB; */ 
 }
 
 .hire--button:hover{
@@ -625,9 +673,9 @@ ul .bullet-points {
 	align-items: center;
 }
 
-.white-text {
+/* .white-text {
 	color: var(--font-color);
-}
+} */
 
 /* #styleContent p{
     padding: 1rem 0;
@@ -644,15 +692,51 @@ ul .bullet-points {
     flex-direction: column;
 }
 
+/*-----FLEX----*/
+
 .flex-container {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
+
+.flex-blog {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center; /* Add this line for centering text within the container */
+    height: 100vh; /* Set the container height to the full viewport height */
+}
+
+
+
+/*---------Flex Direction-----------*/
+
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-row-reverse {
+	flex-direction: row-reverse;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-col-reverse {
+	flex-direction: column-reverse;
+}
+
+
+/*----------------SPACING----------------*/
 
 .box-space {
 	/* margin: 24px 0 24px auto; */
 	padding: 0.5rem 1.2rem;
 }
+
+/*--------------CONTAINERS-------------*/
 
 .wireframes {
 	display: flex;
@@ -674,6 +758,10 @@ ul .bullet-points {
 .project__blockImg {
 	width: 100%;
 }
+
+
+/*---------Content------------*/
+
 
 #targetContent {
     width: 100%;
@@ -859,22 +947,10 @@ ul .bullet-points {
 
 	
 	/*Subheading*/
-	h4 {
-		font-size: 1.953rem;
-		font-family: var(--body-font);
-		color: #0B0B0B;
-		font-weight: 400;
-	}
-
-    .description h4 {
-        font-size: 1.953rem;
-        color: #0B0B0B;
-        padding-top: 16px;
-    }
-
+	
 	p {
 		font-family: var(--body-font);
-		font-size: 1.125rem;
+		/* font-size: 1.125rem; */
 		color: #0B0B0B;
 		line-height: 150%;
 		padding: 8px 0;
@@ -1011,9 +1087,168 @@ ul .bullet-points {
     
 	}
 
+	/*--------FLEXBOX & GRID--------*/
+
+	/*----Justify content----*/
+
+	.justify-c {
+		justify-content: center;
+	}
+
+	/*-----Align items------*/
+
+	.items-center {
+		align-items: center;
+	}
+
+	/*----Flex Direction--------*/
+
+	.flex-row {
+		flex-direction: row;
+	}
+	
+	.flex-row-reverse {
+		flex-direction: row-reverse;
+	}
+	
+	.flex-col {
+		flex-direction: column;
+	}
+	
+	.flex-col-reverse {
+		flex-direction: column-reverse;
+	}
+
+	/*------SIZING---------*/
+
+
+
+	.max-w-none	{
+		max-width: none;
+	}
+
+	.max-w-xs {
+	max-width: 20rem; /* 320px */
+	}	
+	.max-w-sm {
+		max-width: 24rem; /* 384px */
+	}
+
+	.max-w-md {
+		max-width: 28rem; /* 448px */
+	}	
+
+	.max-w-lg {
+		max-width: 32rem; /* 512px */
+	}	
+
+	.max-w-xl {
+		max-width: 36rem; /* 576px */
+	}
+
+	.max-w-2xl {
+		max-width: 42rem; /* 672px */
+	}	
+
+	.max-w-3xl {
+		max-width: 48rem; /* 768px */
+	}	
+
+
+	/*-------SPACING-------*/
+
+	.m-sm {
+		margin: 4px;
+	}
+	
+	.m-base {
+		margin: 8px;
+	}
+	
+	.m-rg {
+		margin: 16px;
+	}
+	
+	.m-l {
+		margin: 24px;
+	}
+	
+	.m-xl {
+		margin: 32px;
+	}
+	
+	.p-sm {
+		padding: 4px;
+	}
+	
+	.p-base {
+		padding: 8px;
+	}
+	
+	.p-rg {
+		padding: 16px;
+	}
+	
+	.p-l {
+		padding: 24px;
+	}
+	
+	.p-xl {
+		padding: 32px;
+	}
+	
+	.p-xxxl {
+		padding: 96px;
+	}
+	
+	.px-xxl {
+		padding-left: 32px;
+		padding-right: 32px
+	}
+	
+	.py-xxxl {
+		padding-top: 32px;
+		padding-bottom: 32px;
+	}
+
+	/*----------Background------------*/
+
+	.bg-white {
+		background-color: #fbfbfb;
+	}
+
+	/*----------Text color------------*/
+
+	.text-black {
+		color: #0B0B0B;
+	}
+
 	.white-text {
 		color: #FEFEFE;
 	}
+
+	/*----------Text size------------*/
+
+	.text-3xl {
+		font-size: 1.953rem;
+		font-weight: 400;
+	}
+
+	.text-2xl {
+		font-size:1.563rem;
+		font-weight: 400;
+	}
+
+	.text-xl {
+		font-size: 1.25rem;
+		font-weight: 400;
+	}
+
+	.text-base {
+		font-size: var(--body-font);
+		font-weight: 400;
+	}
+
 
 	.sub-title {
 		font-size: 3.125rem;
