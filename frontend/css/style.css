@@ -110,11 +110,11 @@ button {
 	color: #0B0B0B;
 }
 
-.short-text p {
+/* .short-text p {
 	width: 60ch;
 	font-weight: 300;
 	font-size: 1.1rem;
-}
+} */
 
 
 
@@ -219,7 +219,7 @@ footer {
     align-items: center;
     padding: 2rem 0.625rem;
     height: 200px;
-	margin: 0 16px;
+	
 }
 
 footer p {
@@ -360,13 +360,6 @@ ul .bullet-points {
 	padding: 1rem;
 }
 
-.projects-wrapper {
-	display: grid;
-	grid-template-columns: repeat(1, minmax(0, 1fr));
-	/* flex-flow: row wrap; */
-	gap: 0.5rem;
-}
-
 .about-container {
 	max-width: var(--max-width);
 	margin: 0 auto;
@@ -377,41 +370,17 @@ ul .bullet-points {
 	padding: 0 1rem;
 }
 
-.about-container h3 {
+/* .about-container h3 {
 	font-family: var(--app-font);
 	font-weight: 700;
-}
+} */
 
-.about-container p {
-	padding: 1rem 0;
-	/* max-width: 60ch; */
-}
+
 
 .about-container img {
 	/* /* max-width: 50%; */
 	max-height: 100%; 
 	padding: 1rem 0;
-}
-
-
-
-/*--*/
-
-.card--content {
-	margin: 1rem;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.card--content p {
-	padding: 1rem 0;
-}
-
-.card--content h3 {
-    color: #FEFEFE;
-	font-size: 2.813rem;
 }
 
 .nav {
@@ -947,16 +916,6 @@ ul .bullet-points {
 
 	
 	/*Subheading*/
-	
-	p {
-		font-family: var(--body-font);
-		/* font-size: 1.125rem; */
-		color: #0B0B0B;
-		line-height: 150%;
-		padding: 8px 0;
-		
-	}
-
 	/* h5 {
 		font-size: 2.438rem;
 		font-weight: 700;
@@ -1229,7 +1188,7 @@ ul .bullet-points {
 
 	/*----------Text size------------*/
 
-	.text-3xl {
+	/* .text-3xl {
 		font-size: 1.953rem;
 		font-weight: 400;
 	}
@@ -1242,7 +1201,7 @@ ul .bullet-points {
 	.text-xl {
 		font-size: 1.25rem;
 		font-weight: 400;
-	}
+	} */
 
 	.text-base {
 		font-size: var(--body-font);

@@ -31,20 +31,6 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Hotjar Tracking Code for My Portfolio -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:3635559,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-
-    <!--END Hotjar Tracking code-->
-
     <meta charset="utf-8" />
     <title>Fredrikke Kulsrud</title>
     <link
@@ -76,6 +62,19 @@
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
 
     <script type="module" src="./js/app.js"></script>
   </head>
@@ -111,13 +110,7 @@
                 >RESUME</a
               >
             </li>
-            <!-- <li>
-                        <a href="mailto:fmkulsrud@gmail.com" target="_blank" rel="noreferrer noopener">
-                          <button class="hire--button">
-                            CONTACT
-                          </button>
-                        </a>
-                      </li> -->
+
           </ul>
         </nav>
 
@@ -167,17 +160,19 @@
       </div>
     </header>
 
-    <section class="hero" aria-label="">
+    <section
+      class="flex flex-col h-500 justify-center items-center p-20 bg-[#FBFBFB] text-gray-900"
+      aria-label=""
+    >
       <div class="main-title-site">
         <h1 class="heading-xxlarge">Hey, I am Fredrikke</h1>
       </div>
-      <p class="sub-title">a UI/UX Designer</p>
-      <div class="short-text">
-        <ul class="bullet-points">
-          <li>Top-grade degree in Interaction Design.</li>
-          <li>Evidenced dedication and passion for UI/UX.</li>
-          <li>Completed a noteworthy internship at DNB Corporate Banking.</li>
-        </ul>
+      <p class="text-3xl">a freelance UI/UX Designer</p>
+      <div class="mt-4 text-lg">
+        <p>
+          <b>Speciality:</b> Figma, Adobe XD, Sanity, Illustrator, After Effects
+          & WCAG.
+        </p>
       </div>
 
       <!-- <a href="#main-content" aria-label="Skip to main content">
@@ -200,14 +195,18 @@
       </svg>
     </div>
 
-    <main class="main--centered" id="main-content">
-      <div class="card-title">
-        <h2>Portfolio</h2>
-      </div>
-
-      <section class="projects-wrapper"></section>
-    </main>
-
+    <main class="bg-[#014B56] py-8 sm:py-12">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-5xl font-bold tracking-tight text-white sm:text-6xl">Portfolio</h2>
+            <p class="mt-2 text-xl font-light leading-8 text-white">Sample of my case studies</p>
+          </div>
+          <div class="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3" id="project-wrapper">
+            <!-- Dynamic content will be added here using JavaScript -->
+          </div>
+        </div>
+      </main>
+      
     <footer>
       <p>Please contact me if you want to have a chat!</p>
       <div class="contact-icons">
@@ -238,7 +237,7 @@
           </button>
         </a>
       </div>
-      <p>© 2022 Fredrikke Kulsrud</p>
+      <p>© 2023 Fredrikke Kulsrud</p>
     </footer>
   </body>
 </html>

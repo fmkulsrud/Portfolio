@@ -1,8 +1,8 @@
-import handleHambuger from './menu.js';
-import { activeNavbar } from './navbar.js';
-import { readUrl } from './utils.js';
-import { aboutUrl, sanityUrl } from './env.js';
-import {handleParagraphs} from './utils.js';
+import handleHambuger from "./menu.js";
+import { activeNavbar } from "./navbar.js";
+import { readUrl } from "./utils.js";
+import { aboutUrl, sanityUrl } from "./env.js";
+import { handleParagraphs } from "./utils.js";
 
 handleHambuger();
 window.onload = function () {
@@ -69,83 +69,129 @@ const queryAboutMe = `
   }
 `;
 
-
 // end of queries
 
-async function getProject() {
-    const response = await fetch(`${sanityUrl}${encodeURI(querySingleProject)}`);
-    const { result } = await response.json();
-    renderSingleProject(result);
+function customizeById(id) {
+  const contentDiv = document.getElementById(id);
+
+  if (contentDiv) {
+    const h3Classes = [
+      "mt-4",
+      "text-3xl",
+      "font-light",
+      "mb-5",
+      "leading-6",
+      "text-black",
+      "hover:none"
+    ];
+
+    const pClasses = [
+      "mb-4"
+    ];
+
+    const h3Elements = contentDiv.querySelectorAll("h3");
+    h3Elements.forEach((h3Element) => {
+      h3Element.classList.add(...h3Classes);
+    });
+
+    const pElements = contentDiv.querySelectorAll("p");
+    pElements.forEach((pElement) => {
+      pElement.classList.add(...pClasses);
+    });
+  }
 }
 
-function renderSingleProject (result) {
-  const titleEl = document.querySelector('.single-project__title');
-  titleEl.textContent = result[0].title
-  const coverProjectEl = document.querySelector('.project__cover');
-  coverProjectEl.setAttribute('src', result[0].cover);
-  
+async function getProject() {
+  const response = await fetch(`${sanityUrl}${encodeURI(querySingleProject)}`);
+  const { result } = await response.json();
+  renderSingleProject(result);
+}
+
+function renderSingleProject(result) {
+  console.log("result[0]", result[0])
+  const titleEl = document.querySelector(".single-project__title");
+  titleEl.textContent = result[0].title;
+  titleEl.classList.add("text-6xl", "font-semibold", "mt-6");
+  const coverProjectEl = document.querySelector(".project__cover");
+  coverProjectEl.setAttribute("src", result[0].cover);
+
   // const tilteDetails = document.querySelector('.project__details');
   // titleEl.textContent = result[0].details
-  handleParagraphs(result[0].details, 'detailContent');
+  handleParagraphs(result[0].details, "detailContent");
 
-  handleParagraphs(result[0].shortdescription, 'briefContent');
-  handleParagraphs(result[0].projectDetails, 'project_details');
+  handleParagraphs(result[0].shortdescription, "briefContent");
+  customizeById("briefContent")
+  handleParagraphs(result[0].projectDetails, "project_details");
   // plotTools(result[0].tools, 'toolIcons');
-  handleParagraphs(result[0].problem, 'problemContent')
-  handleParagraphs(result[0].userReasearch, 'userResearchContent');
-  
+  handleParagraphs(result[0].problem, "problemContent");
+  customizeById("problemContent")
+
+  handleParagraphs(result[0].userReasearch, "userResearchContent");
+  customizeById("userResearchContent")
+
   const researchImgEl = document.querySelector(".research-img");
-  researchImgEl.setAttribute('src', result[0].researchimg);
+  researchImgEl.setAttribute("src", result[0].researchimg);
 
-  handleParagraphs(result[0].comeptitor, 'competitorAnalysisContent');
-  handleImgGalleries(result[0].competitorimage, 'competitorGallery');
+  handleParagraphs(result[0].comeptitor, "competitorAnalysisContent");
+  customizeById("competitorAnalysisContent");
 
-  handleParagraphs(result[0].findings, 'findingsContent');
-  handleImgGalleries(result[0].findingsimg, 'findingsGallery');
+  handleImgGalleries(result[0].competitorimage, "competitorGallery");
+
+  handleParagraphs(result[0].findings, "findingsContent");
+  customizeById("findingsContent");
+  handleImgGalleries(result[0].findingsimg, "findingsGallery");
+
+  handleParagraphs(result[0].targetGroupsContainer, "targetContent");
+  customizeById("targetContent");
+
+  handleParagraphs(result[0].personas, "personaContent");
+  customizeById("personaContent");
+  handleImgGalleries(result[0].personasGallery, "persona-Img");
+
+  handleParagraphs(result[0].wireframeDescription, "wireframesContent");
+  customizeById("wireframesContent");
+  handleImgGalleries(result[0].wireframegallery, "wireframes-images");
   
-  // handleParagraphs(result[0].targetGroupsContainer, 'targetContent');
-  handleParagraphs(result[0].personas, 'personaContent');
-  handleImgGalleries(result[0].personasGallery, 'persona-Img');
+  handleParagraphs(result[0].styleContent, "styleContent");
+  customizeById("styleContent");
+  handleImgGalleries(result[0].styleguide, "style-images");
 
-  handleParagraphs(result[0].wireframeDescription, 'wireframesContent');
-  handleImgGalleries(result[0].wireframegallery, 'wireframes-images');
-  
-  handleParagraphs(result[0].styleContent, 'styleContent');
-  handleImgGalleries(result[0].styleguide, 'style-images');
+  handleParagraphs(result[0].icons, "iconsContent");
+  customizeById("iconsContent");
+  handleImgGalleries(result[0].iconsImg, "icons-images");
 
-  handleParagraphs(result[0].icons, 'iconsContent');
-  handleImgGalleries(result[0].iconsImg, 'icons-images');
+  handleParagraphs(result[0].moodboard, "moodboard");
+  customizeById("moodboard");
 
-  handleParagraphs(result[0].moodboard, 'moodboard');
-
-  if(result[0].hifiprototypeimg) {
-    const prototypeCover = document.getElementById('prototype-cover');
+  if (result[0].hifiprototypeimg) {
+    const prototypeCover = document.getElementById("prototype-cover");
     //const prototypeCoverEL = document.createElement('img') // if you build in img tag
-    prototypeCover.setAttribute('src', result[0].hifiprototypeimg);
-    prototypeCover.setAttribute('alt', 'prototype bilde');
+    prototypeCover.setAttribute("src", result[0].hifiprototypeimg);
+    prototypeCover.setAttribute("alt", "prototype bilde");
     //prototypeCover.append(prototypeCoverEL);
   }
 
-  handleParagraphs(result[0].hifiprototype, 'hifi-Content');
-  handleImgGalleries(result[0].hifigallery, 'hifi-images');
+  handleParagraphs(result[0].hifiprototype, "hifi-Content");
+  customizeById("hifi-Content");
+  handleImgGalleries(result[0].hifigallery, "hifi-images");
 
-  handleParagraphs(result[0].discoverFigma, 'discover-content');
-  
-  handleParagraphs(result[0].reflection, 'reflection');
-  
-  
+  handleParagraphs(result[0].discoverFigma, "discover-content");
+  customizeById("discover-Content");
+
+  handleParagraphs(result[0].reflection, "reflection");
+  customizeById("reflection");
 }
 
 function handleImgGalleries(gallery, container) {
-  if(gallery && gallery.length > 0) {
+  if (gallery && gallery.length > 0) {
     const galleryContainer = document.getElementById(container);
-    gallery.map(img => {
-      const imgContainer = document.createElement('img');
-      imgContainer.setAttribute('src', img);
-      imgContainer.classList.add('gallery-img');
+    gallery.map((img) => {
+      const imgContainer = document.createElement("img");
+      imgContainer.setAttribute("src", img);
+      imgContainer.classList.add("gallery-img");
       galleryContainer.append(imgContainer);
     });
-  };
+  }
 }
 
 // function plotTools (data, container) {
@@ -159,87 +205,71 @@ function handleImgGalleries(gallery, container) {
 // }
 
 if (urlString !== undefined) {
+  console.log("urlString", urlString)
   getProject();
 }
 
-// vi må ha await fordi det tar så kort tid før data i console log dukker opp. Hvis vi ikke har await funksjon
-// dukker det opp en feil
+// Define a function to fetch and render projects
 async function getAllProjects() {
-  const response =await fetch(`${sanityUrl}${encodeURI(queryAllProjects)}`);
-  const {result}  = await response.json();
+  const response = await fetch(`${sanityUrl}${encodeURI(queryAllProjects)}`);
+  const { result } = await response.json();
 
-    renderProjectsList(result);
-  }
-
-  function renderProjectsList(result) {
-      const projectsEl = document.querySelector('.projects-wrapper');
-    
-      result.forEach(project => {
-      const cardEl = document.createElement('a');
-      cardEl.classList.add('card');
-      cardEl.setAttribute('href', `/projects/?${project.slug.current}`);
-      const coverEl = document.createElement('img');
-      coverEl.setAttribute('src', project.bilde)
-      cardEl.append(coverEl);
-
-      const contentEl = document.createElement('div');
-      contentEl.classList.add('card--content');
-
-      const h3El = document.createElement('h3');
-      h3El.textContent = project.title;
-      contentEl.append(h3El);
-
-      const pEl = document.createElement('p');
-      pEl.textContent = project.ProjectPitch;
-      contentEl.append(pEl);
-
-      const buttonEl = document.createElement('button');
-      buttonEl.classList.add('button--read');
-
-      const spanEl = document.createElement('span');
-      spanEl.textContent = project.text;
-      buttonEl.append(spanEl);
-
-      const imageEl = document.createElement('img');
-      imageEl.setAttribute('src', './assets/arrow_b.svg')
-      buttonEl.innerText = 'Continue to case'
-      buttonEl.append(imageEl)
-      contentEl.append(buttonEl)
-      cardEl.append(contentEl);
-      projectsEl.append(cardEl);
-      
-      })
-  }
-
-if (urlString === undefined) {
-  getAllProjects();
+  renderProjectsList(result);
 }
 
+function renderProjectsList(result) {
+  const projectsEl = document.getElementById("project-wrapper");
+  console.log("projectsEl", projectsEl)
 
-//USE THIS CODE LATER TO CREATE A SCROLL TO TOP FUNCTION
-// //Get the button:
-// let mybutton = document.getElementById("myBtn");
-// // mybutton.setAttribute('onclick', 'topFunction()')
+  result.forEach((project) => {
+    const cardEl = document.createElement("a");
+    cardEl.setAttribute("href", `/projects/?${project.slug.current}`);
+    cardEl.classList.add("p-3", "group");
 
-// //When the user scrolls down 20px from the top of the document, show the button
-// window.onscroll = function() {scrollFunction()};
+    const coverEl = document.createElement("img");
+    coverEl.setAttribute("src", project.bilde);
+    coverEl.classList.add(
+      "aspect-[16/9]",
+      "w-full",
+      "rounded-2xl",
+      "bg-gray-100",
+      "object-cover",
+      "sm:aspect-[2/1]",
+      "lg:aspect-[3/2]",
+      "group-hover:opacity-90"
+    );
 
-// function scrollFunction() {
-//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//     mybutton.style.display = "block";
-//   } else {
-//     mybutton.style.display = "none";
-//   }
-// };
+    const contentEl = document.createElement("div");
+    contentEl.classList.add("max-w-xl");
 
+    const h3El = document.createElement("h3");
+    h3El.textContent = project.title;
+    h3El.classList.add(
+      "mt-4",
+      "text-2xl",
+      "font-medium",
+      "leading-6",
+      "text-white",
+      "group-hover:underline"
+    );
 
-// //When the user click on the button, scroll to the top of the document
-// function topFunction() {
-//   document.body.scrollTop = 0; // For Safari
-//   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera  
-// }
+    const pEl = document.createElement("p");
+    pEl.textContent = project.ProjectPitch;
+    pEl.classList.add("text-sm", "leading-6", "text-gray-600"); // Apply Tailwind CSS classes for the paragraph
 
+    const spanEl = document.createElement("span");
+    spanEl.textContent = project.text;
 
+    // Append all elements to the card element
+    contentEl.append(h3El, pEl);
+    cardEl.append(coverEl, contentEl, spanEl);
 
+    // Append the card element to the projects container
+    projectsEl.append(cardEl);
+  });
+}
 
-
+// Call the function to fetch and render projects when the page is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  getAllProjects();
+});

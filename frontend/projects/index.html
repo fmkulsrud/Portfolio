@@ -40,8 +40,21 @@
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/style.css">
         <script type="module" src="../js/app.js"></script>
+
+        <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+        <script>
+        tailwind.config = {
+            theme: {
+            extend: {
+                fontFamily: {
+                serif: ["Playfair Display", "serif"],
+                },
+            },
+            },
+        };
+        </script>
     </head>
-    <body>
+    <body class="bg-[#fbfbfb]">
         <a href="main-content" class="skip-to">
             Skip to main content
         </a>
@@ -124,7 +137,9 @@
         </header>
 
         <main class="body-version2">
+            
                 <section class="project-container">
+            
                     <section class="project-container__hero" aria-label="">
                         <div class="project-container__intro">
                             <h2 class="single-project__title project__title">
@@ -134,16 +149,17 @@
                             <img class="project__cover"> 
                         </div>
                     </section>
+                    
 
-                    <section class="project-overview-container">
+                    <section class="w-full rounded-2xl text-black my-10 p-6 bg-[#EADBF8]">
                         
-                        <h3 class="heading-margin">
+                        <h3 class="mb-10 text-4xl font-light leading-6 text-black hover:none">
                             Project overview
                         </h3>
 
-                        <div class="description box-space">
-                            <div class="overview"> 
-                                <div id="briefContent" class="h-margin-8px">
+                        <div>
+                            <div class="overview bigger-p mb-4"> 
+                                <div id="briefContent">
                                 </div>
                             </div>
                             <div class="overview">
@@ -173,9 +189,6 @@
                             <div id="competitorAnalysisContent"></div>
                         </div>
                         <div id="competitorGallery"></div>
-                           
-                            
-                        
                     </section>
                     
                     <section class="user-research-container">
@@ -266,7 +279,7 @@
                     </button>
                 </a>
             </div>
-            <p>© 2022  Fredrikke Kulsrud</p>
+            <p>© 2023 Fredrikke Kulsrud</p>
         </footer>
         
     </body>
