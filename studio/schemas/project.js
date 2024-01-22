@@ -9,9 +9,18 @@ export default {
             type: 'string',
         },
         {
+            name: 'tags',
+            title: 'Tags',
+            type: 'array',
+            of: [{type: 'string'}],
+            options: {
+                layout: 'tags'
+              }
+        },
+        {
             name: 'subtext',
-            tile: "Sub-text",
-            type: "string",
+            title: "Sub-text",
+            type: 'string',
         },
         {
             name: 'details',
@@ -163,6 +172,11 @@ export default {
             name: 'moodboard',
             title: 'Moodboard Content',
             type: 'blockContent',
+        },
+        {
+            name:'solution',
+            title: 'Solution content',
+            type: 'blockContent'
         },
         {
             name: 'wireframeDescription',

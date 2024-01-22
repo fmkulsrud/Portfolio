@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
@@ -110,7 +110,6 @@
                 >RESUME</a
               >
             </li>
-
           </ul>
         </nav>
 
@@ -161,25 +160,38 @@
     </header>
 
     <section
-      class="flex flex-col h-500 justify-center items-center p-20 bg-[#FBFBFB] text-gray-900"
+      class="max-[600px]: h-500 flex flex-col justify-start bg-[#FBFBFB] p-2 text-2xl text-gray-900 min-[320px]:text-center md:p-20"
       aria-label=""
     >
-      <div class="main-title-site">
-        <h1 class="heading-xxlarge">Hey, I am Fredrikke</h1>
+      <div class="main-title-site mx-2 md:mx-16">
+        <h1 class="m-1 text-3xl font-extrabold md:m-3 md:text-6xl">
+          Hi, I'm Fredrikke
+        </h1>
       </div>
-      <p class="text-3xl">a freelance UI/UX Designer</p>
-      <div class="mt-4 text-lg">
+      <div class="w-auto">
+        <p class="text-lg md:mx-16 md:text-2xl">
+          a freelance UX Designer helping
+        </p>
+      </div>
+      <p class="mx-2 text-lg selection:bg-sky-500 md:mx-16 md:text-2xl">
+        companies create
+        <span class="bg-[#BCDDE2]">user-friendly products.</span>
+      </p>
+
+      <!-- <div class="md:text-2xl text-lg md:mt-4 mt-1 md:mx-16 mx-2">
         <p>
           <b>Speciality:</b> Figma, Adobe XD, Sanity, Illustrator, After Effects
           & WCAG.
         </p>
-      </div>
+      </div> -->
 
-      <!-- <a href="#main-content" aria-label="Skip to main content">
-                <img src="./assets/arrow_down.svg" 
-                class="arrow" 
-                aria-hidden="true">
-            </a> -->
+      <!-- <a
+        href="#main-content"
+        aria-label="Skip to main content"
+        class="jusitfy-center flex"
+      >
+        <img src="./assets/arrow_down.svg" class="arrow" aria-hidden="true" />
+      </a> -->
     </section>
 
     <div class="wave">
@@ -195,18 +207,26 @@
       </svg>
     </div>
 
-    <main class="bg-[#014B56] py-8 sm:py-12">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-5xl font-bold tracking-tight text-white sm:text-6xl">Portfolio</h2>
-            <p class="mt-2 text-xl font-light leading-8 text-white">Sample of my case studies</p>
-          </div>
-          <div class="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3" id="project-wrapper">
-            <!-- Dynamic content will be added here using JavaScript -->
-          </div>
+    <main class="bg-[#014B56] py-8 md:py-12">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2
+            class="text-2xl font-bold tracking-tight text-white md:text-3xl md:text-6xl"
+          >
+            Portfolio
+          </h2>
+          <!-- <p class="mt-2 text-xl leading-8 text-white">Sample of my case studies</p> -->
         </div>
-      </main>
-      
+        <div
+          class="mx-auto mt-6 flex max-w-2xl flex-col gap-x-8 gap-y-10 md:flex-col md:gap-y-20 lg:mx-0 lg:max-w-none"
+          id="project-wrapper"
+        >
+          <!-- Dynamic content will be added here using JavaScript -->
+        </div>
+        <!-- <div class="mx-auto mt-6 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-1 grid-cols-" id="project-wrapper"></div> -->
+      </div>
+    </main>
+
     <footer>
       <p>Please contact me if you want to have a chat!</p>
       <div class="contact-icons">
@@ -237,7 +257,7 @@
           </button>
         </a>
       </div>
-      <p>© 2023 Fredrikke Kulsrud</p>
+      <p>© 2024 Fredrikke Kulsrud</p>
     </footer>
   </body>
 </html>

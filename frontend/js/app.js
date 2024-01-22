@@ -14,8 +14,10 @@ const urlString = readUrl();
 
 const queryAllProjects = `
 *[_type =="project"]{
+    tags,
     title,
     slug,
+    subtext,
     "bilde": heroimg.asset->url,
     _id,
     shortProjectPitch
@@ -26,10 +28,10 @@ const querySingleProject = `
   *[slug.current == "${urlString}"] {
     title,
     subtext,
+    tags,
     details,
     "cover":  heroimg.asset->url,
     projectPitch,
-    
     shortdescription,
     problem,
     goals,
@@ -42,6 +44,7 @@ const querySingleProject = `
     targetGroupsContainer,
     personas,
     "personasGallery": personasGallery[].asset->url,
+    solution,
     wireframeDescription,
     "wireframegallery": wireframegallery[].asset->url,
     styleContent,
@@ -77,21 +80,27 @@ function customizeById(id) {
   if (contentDiv) {
     const h3Classes = [
       "mt-4",
-      "text-3xl",
-      "font-light",
+      "md:text-3xl",
+      "text-2xl",
+      "font-medium",
       "mb-5",
       "leading-6",
       "text-black",
-      "hover:none"
+      "hover:none",
     ];
 
-    const pClasses = [
-      "mb-4"
-    ];
+    const h4Classes = ["md:text-xl", "text-lg", "text-[#505050]", "mb-2"];
+
+    const pClasses = ["mb-4", "md:text-lg", "text-base", "font-light"];
 
     const h3Elements = contentDiv.querySelectorAll("h3");
     h3Elements.forEach((h3Element) => {
       h3Element.classList.add(...h3Classes);
+    });
+
+    const h4Elements = contentDiv.querySelectorAll("h4");
+    h4Elements.forEach((h4Element) => {
+      h4Element.classList.add(...h4Classes);
     });
 
     const pElements = contentDiv.querySelectorAll("p");
@@ -108,26 +117,36 @@ async function getProject() {
 }
 
 function renderSingleProject(result) {
-  console.log("result[0]", result[0])
+  console.log("result[0]", result[0]);
   const titleEl = document.querySelector(".single-project__title");
   titleEl.textContent = result[0].title;
-  titleEl.classList.add("text-6xl", "font-semibold", "mt-6");
+  titleEl.classList.add(
+    "text-4xl",
+    "md:text-6xl",
+    "font-semibold",
+    "mt-6",
+    "md:mx-2",
+    "mx-0",
+  );
   const coverProjectEl = document.querySelector(".project__cover");
   coverProjectEl.setAttribute("src", result[0].cover);
 
   // const tilteDetails = document.querySelector('.project__details');
   // titleEl.textContent = result[0].details
   handleParagraphs(result[0].details, "detailContent");
+  customizeById("detailContent");
+
+  handleParagraphs(result[0].subtext, "subContent");
 
   handleParagraphs(result[0].shortdescription, "briefContent");
-  customizeById("briefContent")
+  customizeById("briefContent");
   handleParagraphs(result[0].projectDetails, "project_details");
   // plotTools(result[0].tools, 'toolIcons');
   handleParagraphs(result[0].problem, "problemContent");
-  customizeById("problemContent")
+  customizeById("problemContent");
 
   handleParagraphs(result[0].userReasearch, "userResearchContent");
-  customizeById("userResearchContent")
+  customizeById("userResearchContent");
 
   const researchImgEl = document.querySelector(".research-img");
   researchImgEl.setAttribute("src", result[0].researchimg);
@@ -141,17 +160,20 @@ function renderSingleProject(result) {
   customizeById("findingsContent");
   handleImgGalleries(result[0].findingsimg, "findingsGallery");
 
-  handleParagraphs(result[0].targetGroupsContainer, "targetContent");
-  customizeById("targetContent");
+  // handleParagraphs(result[0].targetGroupsContainer, "targetContent");
+  // customizeById("targetContent");
 
   handleParagraphs(result[0].personas, "personaContent");
   customizeById("personaContent");
   handleImgGalleries(result[0].personasGallery, "persona-Img");
 
+  handleParagraphs[(result[0].solution, "solutionContent")];
+  customizeById("solutionContent");
+
   handleParagraphs(result[0].wireframeDescription, "wireframesContent");
   customizeById("wireframesContent");
   handleImgGalleries(result[0].wireframegallery, "wireframes-images");
-  
+
   handleParagraphs(result[0].styleContent, "styleContent");
   customizeById("styleContent");
   handleImgGalleries(result[0].styleguide, "style-images");
@@ -176,7 +198,7 @@ function renderSingleProject(result) {
   handleImgGalleries(result[0].hifigallery, "hifi-images");
 
   handleParagraphs(result[0].discoverFigma, "discover-content");
-  customizeById("discover-Content");
+  customizeById("discover-content");
 
   handleParagraphs(result[0].reflection, "reflection");
   customizeById("reflection");
@@ -205,64 +227,120 @@ function handleImgGalleries(gallery, container) {
 // }
 
 if (urlString !== undefined) {
-  console.log("urlString", urlString)
+  console.log("urlString", urlString);
   getProject();
 }
 
 // Define a function to fetch and render projects
 async function getAllProjects() {
-  const response = await fetch(`${sanityUrl}${encodeURI(queryAllProjects)}`);
-  const { result } = await response.json();
+  try {
+    const response = await fetch(`${sanityUrl}${encodeURI(queryAllProjects)}`);
+    const { result } = await response.json();
 
-  renderProjectsList(result);
+    console.log("result", result);
+    renderProjectsList(result);
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+  }
 }
 
 function renderProjectsList(result) {
   const projectsEl = document.getElementById("project-wrapper");
-  console.log("projectsEl", projectsEl)
+  console.log("projectsEl", projectsEl);
 
   result.forEach((project) => {
     const cardEl = document.createElement("a");
     cardEl.setAttribute("href", `/projects/?${project.slug.current}`);
-    cardEl.classList.add("p-3", "group");
+    cardEl.classList.add(
+      "p-3",
+      "flex",
+      "md:flex-row",
+      "flex-col",
+      "items-center",
+    );
 
     const coverEl = document.createElement("img");
     coverEl.setAttribute("src", project.bilde);
     coverEl.classList.add(
-      "aspect-[16/9]",
-      "w-full",
-      "rounded-2xl",
+      "aspect-[16/11]",
+      "md:w-1/2",
+      // "w-1/2",
+      "rounded-xl",
       "bg-gray-100",
       "object-cover",
-      "sm:aspect-[2/1]",
+      // "md:aspect-[2/1]",
       "lg:aspect-[3/2]",
-      "group-hover:opacity-90"
+      "group-hover:opacity-90",
     );
 
+    const contentWrapperEl = document.createElement("div");
+    contentWrapperEl.classList.add(
+      "md:w-1/2",
+      "w-full",
+      "m-7",
+      "flex",
+      "flex-col",
+      "content-center",
+    );
+
+    const contentEl2Wrapper = document.createElement("div");
+    contentEl2Wrapper.classList.add("flex", "gap-3"); // This div will make contentEl2 stack vertically
+
+    project.tags &&
+      project.tags.forEach((tag) => {
+        const pillEl = document.createElement("p");
+        pillEl.textContent = tag;
+        pillEl.classList.add(
+          "rounded-3xl",
+          "md:text-base",
+          "text-sm", //This is the text size
+          "font-normal", //This is the font weight
+          "text-[#0B0B0B]",
+          "bg-[#BCDDE2]", // You can add background color or any other styles for the pill
+          "p-2", //Padding to pill
+          "border-solid",
+          "border-black",
+          "border-1",
+          // "mb-8" // Adding margin-bottom to separate pills (adjust as needed)
+        );
+
+        contentEl2Wrapper.appendChild(pillEl);
+      });
+
     const contentEl = document.createElement("div");
-    contentEl.classList.add("max-w-xl");
+    contentEl.classList.add("flex", "flex-col", "mt-4");
 
     const h3El = document.createElement("h3");
     h3El.textContent = project.title;
     h3El.classList.add(
-      "mt-4",
+      "md:text-3xl",
       "text-2xl",
       "font-medium",
       "leading-6",
       "text-white",
-      "group-hover:underline"
+      "group-hover:underline",
+      "md:mt-2",
+      "mt-1",
     );
 
     const pEl = document.createElement("p");
-    pEl.textContent = project.ProjectPitch;
-    pEl.classList.add("text-sm", "leading-6", "text-gray-600"); // Apply Tailwind CSS classes for the paragraph
+    pEl.textContent = project.subtext;
+    pEl.classList.add(
+      "md:text-lg",
+      "text-base",
+      "leading-6",
+      "text-[#FBFBFB]",
+      "mt-3",
+      "font-light",
+    );
 
     const spanEl = document.createElement("span");
     spanEl.textContent = project.text;
 
     // Append all elements to the card element
     contentEl.append(h3El, pEl);
-    cardEl.append(coverEl, contentEl, spanEl);
+    contentWrapperEl.append(contentEl2Wrapper, contentEl);
+    cardEl.append(coverEl, contentWrapperEl, spanEl);
 
     // Append the card element to the projects container
     projectsEl.append(cardEl);
