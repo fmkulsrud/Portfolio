@@ -125,7 +125,6 @@ function renderSingleProject(result) {
     "md:text-6xl",
     "font-semibold",
     "mt-6",
-    "md:mx-2",
     "mx-0",
   );
   const coverProjectEl = document.querySelector(".project__cover");
