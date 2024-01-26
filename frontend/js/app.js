@@ -91,7 +91,7 @@ function customizeById(id) {
 
     const h4Classes = ["md:text-xl", "text-lg", "text-[#505050]", "mb-2"];
 
-    const pClasses = ["mb-4", "md:text-lg", "text-base", "font-light"];
+    const pClasses = ["mb-3", "md:text-lg", "text-base", "font-light"];
 
     const h3Elements = contentDiv.querySelectorAll("h3");
     h3Elements.forEach((h3Element) => {
