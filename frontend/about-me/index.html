@@ -70,7 +70,8 @@
         theme: {
           extend: {
             fontFamily: {
-              serif: ["Playfair Display", "serif"],
+              sans: ["Albert Sans", "sans-serif"],
+              serif: ["Antic Didone", "serif"],
             },
           },
         },
@@ -85,12 +86,25 @@
     <header>
       <div class="header--centered">
         <nav class="desktop-nav">
-          <ul id="navbar-list">
+          <ul
+            class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse dark:border-gray-700 dark:bg-gray-800 md:dark:bg-gray-900"
+            id="navbar-list"
+          >
             <li>
-              <a href="../index.html">MY WORK</a>
+              <a
+                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                aria-current="page"
+                href="../index.html"
+                >MY WORK</a
+              >
             </li>
             <li>
-              <a href="../about-me/">ABOUT ME</a>
+              <a
+                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                aria-current="page"
+                href="../about-me/"
+                >ABOUT ME</a
+              >
             </li>
             <li>
               <a class="logo-navbar" href="/" aria-label="back to homepage">
@@ -101,10 +115,17 @@
               </a>
             </li>
             <li>
-              <a href="../blog.html">BLOG</a>
+              <a
+                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                aria-current="page"
+                href="../blog.html"
+                >BLOG</a
+              >
             </li>
             <li>
               <a
+                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                aria-current="page"
                 href="../assets/pds/CV - Fredrikke M Kulsrud.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -161,46 +182,94 @@
       </div>
     </header>
     <main class="bg-[#FBFBFB]">
-      <section
-        class="mx-5 mx-auto mb-5 flex max-w-7xl flex-col px-6 md:mx-10 md:mb-5 md:p-20 lg:px-8"
-      >
-        <div class="m-2 flex justify-center pt-2 md:m-10 md:pt-0">
-          <h2
-            class="jusitfy-center align-center text-3xl font-bold text-[#111827] md:text-6xl"
-          >
-            About me
-          </h2>
-        </div>
-        <div class="m-2 mx-auto flex flex-col md:flex-row">
-          <div class="flex w-full justify-center md:w-1/4 md:justify-start">
-            <img
-              class="w-1/2 md:w-auto"
-              src="../assets/images/Portrait-mdall.jpg"
-              alt=""
-            />
-          </div>
-          <div class="md:ml-7">
-            <p
-              class="my-0.5 mb-4 ml-2 mt-4 text-lg font-light leading-7 md:mb-0 md:mt-0 md:max-w-2xl md:text-lg"
+      <div class="flex items-center justify-center">
+        <section
+          class="mx-5 mb-5 flex max-w-7xl flex-col justify-center px-6 md:mx-10 md:mb-5 md:p-10"
+        >
+          <div class="m-2 flex justify-start pt-2 md:m-10 md:pt-0">
+            <h2
+              class="m-1 text-2xl text-[#111827] hover:font-bold md:m-3 md:text-7xl"
             >
-              My name is Fredrikke Kulsrud I hold a top-grade degree in
-              Interaction Design from Kristiania Professional College,
-              demonstrating my dedication and passion for the subject. My
-              commitment to excelling in this field is apparent through an
-              impressive internship at DNB Corporate Banking, where I received
-              praiseworthy references for my performance. Additionally, I
-              successfully completed two collaborative projects with Cappelen
-              Damm and Kode24.
-              <br /><br />
-              With a rich background of 9 years in customer service, I am
-              skilled at handling customers with confidence and professionalimd.
-              My combined academic excellence, internship experience, and
-              project accomplishments have equipped me with valuable skills that
-              I am eager to apply in future endeavors.
-            </p>
+              HELLO, I AM FREDRIKKE!
+            </h2>
           </div>
-        </div>
-      </section>
+          <div
+            class="m-0 flex flex-col-reverse items-center justify-around md:flex-row"
+          >
+            <div
+              class="my-0.5 mt-4 text-center text-lg font-light leading-7 md:mb-0 md:mb-4 md:mt-0 md:max-w-2xl md:text-left"
+            >
+              <p class="text-start">
+                I am an eager UX designer who loves learning new skills and
+                tricks. I have a degree in Interaction Design and have graduated
+                with top-grades. Currently I am working as a freelancer.
+              </p>
+
+              <br />
+              <p class="text-start">
+                I have a passion for digital design, and love creating
+                user-first experiences.
+              </p>
+              <p class="text-start">
+                With nine years of customer service expertise, I bring a unique
+                perspective to understanding and empathizing with users,
+                ensuring their needs and voices drive my design process.
+              </p>
+
+              <br />
+              <h3
+                class="text-start text-2xl font-semibold text-[#000000] md:mb-4"
+              >
+                Key highlights
+              </h3>
+
+              <ul
+                class="my-0.5 mb-4 ml-2 mt-4 list-disc text-center text-lg font-light leading-7 md:mb-0 md:ml-0 md:mt-0 md:max-w-2xl md:text-left"
+              >
+                <p class="text-start font-medium">Work Experience</p>
+                <li class="list-none text-start">
+                  Internship at DNB Corporate Banking
+                </li>
+                <li class="list-none text-start">Freelancer for Moorup</li>
+                <li class="list-none text-start md:mb-4">
+                  Freelancer for metamanager
+                </li>
+
+                <p class="text-start font-medium">Collaborative Projects</p>
+                <li class="list-disc text-start md:ml-5">Cappelen Damm:</li>
+                <li class="list-none text-start md:ml-5">
+                  As part of a class project, we conducted an in-depth analysis
+                  of a Cappelen Damm project, focusing on enhancing Universal
+                  Design and accessibility by thoroughly applying the WCAG
+                  checklist. Our findings and suggestions was delivered to
+                  Cappelen Damm
+                </li>
+
+                <li class="list-disc text-start md:ml-5">Kode24:</li>
+                <li class="list-none text-start md:ml-5">
+                  Also as a group project, we closely examined kode24.no,
+                  identifying areas for improvement in its Universal Design. Our
+                  findings and recommendations were successfully delivered to
+                  Kode24.
+                </li>
+              </ul>
+
+              Customer Service: 9 My academic excellence, combined with my
+              internship experience and project accomplishments, has equipped me
+              with valuable skills that I am eager to apply in future endeavors.
+            </div>
+            <div
+              class="mt-2 flex w-full justify-center md:mt-0 md:w-1/4 md:justify-start"
+            >
+              <img
+                class="w-1/2 md:w-auto"
+                src="../assets/images/Portrait-small.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer>

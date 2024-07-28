@@ -293,12 +293,12 @@ function renderProjectsList(result) {
           "rounded-3xl",
           "md:text-base",
           "text-sm", //This is the text size
-          "font-normal", //This is the font weight
+          "font-medium", //This is the font weight
           "text-[#0B0B0B]",
           "bg-[#BCDDE2]", // You can add background color or any other styles for the pill
-          "p-2", //Padding to pill
+          "p-3", //Padding to pill
           "border-solid",
-          "border-black",
+          // "border-black",
           "border-1",
           // "mb-8" // Adding margin-bottom to separate pills (adjust as needed)
         );

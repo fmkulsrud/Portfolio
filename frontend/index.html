@@ -72,7 +72,8 @@
         theme: {
           extend: {
             fontFamily: {
-              serif: ["Playfair Display", "serif"],
+              serif: ["Antic Didone", "serif"],
+              sans: ["Albert Sans", "sans-serif"],
             },
           },
         },
@@ -89,10 +90,20 @@
         <nav class="desktop-nav">
           <ul id="navbar-list">
             <li>
-              <a href="./index.html">MY WORK</a>
+              <a
+                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                aria-current="page"
+                href="./index.html"
+                >MY WORK</a
+              >
             </li>
             <li>
-              <a href="./about-me/">ABOUT ME</a>
+              <a
+                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                aria-current="page"
+                href="./about-me/"
+                >ABOUT ME</a
+              >
             </li>
             <li>
               <a class="logo-navbar" href="/" aria-label="back to homepage">
@@ -103,10 +114,17 @@
               </a>
             </li>
             <li>
-              <a href="./blog.html">BLOG</a>
+              <a
+                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                aria-current="page"
+                href="./blog.html"
+                >BLOG</a
+              >
             </li>
             <li>
               <a
+                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                aria-current="page"
                 href="./assets/pds/CV - Fredrikke M Kulsrud.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -167,34 +185,15 @@
       aria-label=""
     >
       <div class="main-title-site mx-2 md:mx-16">
-        <h1 class="m-1 text-3xl font-extrabold md:m-3 md:text-6xl">
-          Hi, I'm Fredrikke
+        <h1 class="m-1 text-4xl hover:font-bold md:m-3 md:text-7xl">
+          FREDRIKKE K. BONSAKSEN
         </h1>
       </div>
       <div class="w-auto">
-        <p class="text-lg md:mx-16 md:text-2xl">
-          a freelance UX Designer helping
+        <p class="text-lg font-light md:mx-16 md:text-3xl">
+          A freelance UI/UX designer based in Oslo.
         </p>
       </div>
-      <p class="mx-2 text-lg selection:bg-sky-500 md:mx-16 md:text-2xl">
-        companies create
-        <span class="bg-[#BCDDE2]">user-friendly products.</span>
-      </p>
-
-      <!-- <div class="md:text-2xl text-lg md:mt-4 mt-1 md:mx-16 mx-2">
-        <p>
-          <b>Speciality:</b> Figma, Adobe XD, Sanity, Illustrator, After Effects
-          & WCAG.
-        </p>
-      </div> -->
-
-      <!-- <a
-        href="#main-content"
-        aria-label="Skip to main content"
-        class="jusitfy-center flex"
-      >
-        <img src="./assets/arrow_down.svg" class="arrow" aria-hidden="true" />
-      </a> -->
     </section>
 
     <div class="wave">
@@ -214,11 +213,10 @@
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
           <h2
-            class="text-2xl font-bold tracking-tight text-white md:text-3xl md:text-6xl"
+            class="text-2xl font-extrabold text-white md:text-3xl md:text-6xl"
           >
             Portfolio
           </h2>
-          <!-- <p class="mt-2 text-xl leading-8 text-white">Sample of my case studies</p> -->
         </div>
         <div
           class="mx-auto mt-6 flex max-w-2xl flex-col gap-x-8 gap-y-10 md:flex-col md:gap-y-20 lg:mx-0 lg:max-w-none"
