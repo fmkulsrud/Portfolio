@@ -80,13 +80,14 @@ function customizeById(id) {
   if (contentDiv) {
     const h3Classes = [
       "mt-4",
-      "md:text-3xl",
+      "md:text-4xl",
       "text-2xl",
-      "font-medium",
+      "font-extrabold",
       "mb-5",
       "leading-6",
       "text-black",
       "hover:none",
+      "uppercase",
     ];
 
     const h4Classes = ["md:text-xl", "text-lg", "text-[#505050]", "mb-2"];
