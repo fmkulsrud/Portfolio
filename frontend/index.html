@@ -86,99 +86,132 @@
     <a href="main-content" class="skip-to"> Skip to main content </a>
 
     <header>
-      <div class="header--centered">
-        <nav class="desktop-nav">
-          <ul id="navbar-list">
-            <li>
-              <a
-                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
-                aria-current="page"
-                href="./index.html"
-                >MY WORK</a
-              >
-            </li>
-            <li>
-              <a
-                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
-                aria-current="page"
-                href="./about-me/"
-                >ABOUT ME</a
-              >
-            </li>
-            <li>
-              <a class="logo-navbar" href="/" aria-label="back to homepage">
+      <div class="mx-auto min-h-[5rem] max-w-6xl">
+        <div class="flex flex-row items-center justify-center">
+          <nav class="desktop-nav">
+            <ul id="navbar-list">
+              <li>
+                <a
+                  class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                  aria-current="page"
+                  href="./index.html"
+                  >MY WORK</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                  aria-current="page"
+                  href="./about-me/"
+                  >ABOUT ME</a
+                >
+              </li>
+              <li>
+                <a class="logo-navbar" href="/" aria-label="back to homepage">
+                  <img
+                    src="./assets/icons/logo.svg"
+                    alt="Fredrikke Kulsrud personal logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                  aria-current="page"
+                  href="./blog.html"
+                  >BLOG</a
+                >
+              </li>
+              <li>
+                <a
+                  class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
+                  aria-current="page"
+                  href="./assets/pds/Fredrikke K. Bonsaksen - CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >RESUME</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Mobile navbar/hamburger -->
+        <div class="m-6 flex flex-row items-center justify-end">
+          <nav
+            id="mobile-menu"
+            class="fixed inset-0 z-[100] hidden h-dvh w-full overflow-y-auto bg-white"
+          >
+            <div class="m-4 flex justify-end">
+              <a class="close m-3 cursor-pointer text-[#50d71e]">X</a>
+            </div>
+
+            <div class="items-center">
+              <a class="logo-navbar m-4" href="/" aria-label="back to homepage">
                 <img
                   src="./assets/icons/logo.svg"
                   alt="Fredrikke Kulsrud personal logo"
                 />
               </a>
-            </li>
-            <li>
-              <a
-                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
-                aria-current="page"
-                href="./blog.html"
-                >BLOG</a
-              >
-            </li>
-            <li>
-              <a
-                class="block rounded px-3 py-2 md:p-0 md:hover:bg-transparent md:hover:font-semibold md:hover:text-[#014B56]"
-                aria-current="page"
-                href="./assets/pds/CV - Fredrikke M Kulsrud.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >RESUME</a
-              >
-            </li>
-          </ul>
-        </nav>
+            </div>
 
-        <nav class="overlay-menu hidden">
-          <ul>
-            <li>
-              <a class="close">X</a>
-            </li>
-            <li>
-              <a href="./index.html">MY WORK</a>
-            </li>
-            <li>
-              <a href="./about-me/">ABOUT ME </a>
-            </li>
-            <li>
-              <a href="./blog.html">BLOG</a>
-            </li>
-            <li>
-              <a
-                href="./assets/pds/CV - Fredrikke M Kulsrud.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >RESUME
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:fmkulsrud@gmail.com"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <button class="hire--button">
-                  Contact
-                  <!-- <img class="nav--svg" src="./assets/icons/email-black.svg" alt=""> -->
-                </button>
-              </a>
-            </li>
-            <a class="logo-navbar" href="/" aria-label="back to homepage">
-              <img
-                src="./assets/icons/logo.svg"
-                alt="Fredrikke Kulsrud personal logo"
-              />
-            </a>
-          </ul>
-        </nav>
-        <img class="mobile-menu-icon" src="./assets/hambuger_b.svg" />
+            <ul class="m-4 flex list-none flex-col items-start p-0 text-2xl">
+              <li class="m-4">
+                <a class="flex flex-row space-x-1" href="./index.html">
+                  <!-- Home icon  -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="{1.5}"
+                    stroke="currentColor"
+                    class="w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                    />
+                  </svg>
+                  <p>Home</p>
+                </a>
+              </li>
+
+              <li class="m-4">
+                <a href="./about-me/">About me</a>
+              </li>
+              <li class="m-4">
+                <a href="./blog.html">Blog</a>
+              </li>
+              <li class="m-4">
+                <a
+                  href="./assets/pds/CV - Fredrikke M Kulsrud.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Resume
+                </a>
+              </li>
+              <li class="m-4">
+                <a
+                  href="mailto:fmkulsrud@gmail.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <button class="hire--button">
+                    Contact
+                    <!-- <img class="nav--svg" src="./assets/icons/email-black.svg" alt=""> -->
+                  </button>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- </div> -->
+          <img class="mobile-menu-icon" src="./assets/hambuger_b.svg" />
+        </div>
       </div>
     </header>
+
+    <script type="module" src="./path/to/handleHamburger.js"></script>
 
     <section
       class="max-[600px]: h-500 flex flex-col justify-start bg-[#FBFBFB] p-2 text-2xl text-gray-900 min-[320px]:text-center md:p-20"

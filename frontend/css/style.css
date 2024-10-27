@@ -72,7 +72,7 @@ header {
     flex-direction: column;
 }
 
-.header--centered {
+/* .header--centered {
 	max-width: 70rem;
 	min-height: 5.688rem;
 	margin: 0 0.5rem;
@@ -84,7 +84,7 @@ header {
 	margin-left: auto;
 	margin-right: auto;
 
-}
+} */
 
 button {
 	background-color: #014B56;
@@ -407,9 +407,7 @@ ul .bullet-points {
 	background-color: rgba(255, 255, 255, 1);
 	z-index: 100;
 	position: fixed;
-	top: 0;
-	left: 0;
-	overflow-y: auto; /* Add this line */
+	overflow-y: auto; 
   }
   
   .overlay-menu ul {
@@ -428,7 +426,6 @@ ul .bullet-points {
   .overlay-menu a {
 	text-decoration: none;
 	color: #0B0B0B;
-	margin: 2rem 1rem;
   }
   
   .overlay-menu a:hover {
